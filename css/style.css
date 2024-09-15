@@ -246,7 +246,7 @@
   z-index: 1;
   border-radius: 16px;
   border: none;
-}
+} 
 #progressbar > span {
   background-color: #f3bd00;
   /* width: 10%; */
@@ -464,7 +464,7 @@ input[type="radio"]:checked + label:active {
 #curve {
   box-shadow: 0 -8px 40px #1c1c1e1a;
   background-color: #ffffff;
-  height: 185px;
+  height: 70px;
   margin-top: -180px;
   margin-left : -50px;
   position: relative;
@@ -473,3 +473,11 @@ input[type="radio"]:checked + label:active {
  
 }
 
+.others{
+  padding: 18px 32px;
+  box-shadow: 0 8px 16px 0 rgb(173, 173, 173);
+  border-radius: 10px white;
+  background-color: white;
+  position: relative;
+  z-index: 2;
+}

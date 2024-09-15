@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" href="css/style.css ">
+    <style>
+      
+    </style>
+  </head>
+  <body id="quiz-body">
+    <header id="head">
+      <img
+        id="techpathshala-logo"
+        src="assets/techpathshala.svg"
+        width="198px"
+        height="24px"
+      />
+      <div id="profile-info">
+        <p id="user-name"></p>
+        <img src="assets/temp-profile.png" height="40px" width="40px" />
+      </div>
+    </header>
+    <!-- <hr id="hr" /> -->
+
+    <section id="first-block">
+      <h2>Let's Start the Quizs</h2>
+      <div id="clk-img">
+        <img id="clock" src="assets/clock.svg" width="12px" height="12px" />
+        <p>10 min</p>
+      </div>
+      <ul>
+        <li>Per question = 10pt</li>
+        <li>must attempt all question</li>
+      </ul>
+    </section>
+    <section id="second-block">
+      <img src="assets/design.svg" width="1132px" height="264px" />
+
+      <h2>Let The Quiz Begin</h2>
+      <p>
+        When you're done, review your answers and See<br />
+        your rank.
+      </p>
+      <form>
+        <!-- <article>
+        <div>
+          Full Name<span>*</span><br />
+          <input
+            type="text"
+            id="Full-name"
+            placeholder="Full Name"
+            required
+          /><br />
+        </div>
+        <div>
+          Email ID<span>*</span><br />
+          <input
+            type="email"
+            id="email"
+            placeholder="Email ID"
+            required
+          /><br />
+        </div>
+        <div>
+          Contact No.<span>*</span><br />
+          <input
+            type="number"
+            id="phone"
+            placeholder="Contact No."
+            required
+          /><br />
+        </div><br/>
+      </article> -->
+        <input type="button" id="start-button" onclick="on_start();" value="Start Quiz">
+      </form>
+      
+    </section>
+    <script src="js/script.js"></script>
+  </body>
+</html>

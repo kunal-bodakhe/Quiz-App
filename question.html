@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questions</title>
+    <link
+      rel="stylesheet"
+      href="\css\style.css"
+    />
+  </head>
+  <!-- <body id="quiz-body"> -->
+    <body id="quiz-body">
+      <header id="head">
+        <img
+          id="techpathshala-logo"
+          src="assets/techpathshala.svg"
+          width="198px"
+          height="24px"
+        />
+        <div id="profile-info">
+          <p id="user-name"></p>
+          <img src="assets/temp-profile.png" height="40px" width="40px" />
+        </div>
+      </header>
+    <!-- <hr id="hr" />  -->
+
+
+    <section id="question-wrapper">
+      <h2 id="reminder">Question <span id="count">1</span> of 10</h2>
+
+
+      <div id="progressbar">
+        <span id="progress"></span>
+      </div>
+
+
+      <h3 id="question"></h3>
+      <p>Supporting Text</p>
+
+
+      <ol id="options">
+        <li>
+          <input type="radio" id="option1" name="options" />
+          <label for="option1" onclick="choosedAnswer(0)">1. <span id="op1">Option</span></label>
+        </li>
+        <li>
+          <input type="radio" id="option2" name="options" />
+          <label for="option2" onclick="choosedAnswer(1)">2. <span id="op2">Option</span></label>
+        </li>
+        <li>
+          <input type="radio" id="option3" name="options" />
+          <label for="option3" onclick="choosedAnswer(2)">3. <span id="op3">Option</span></label>
+        </li>
+        <li>
+          <input type="radio" id="option4" name="options" />
+          <label for="option4" onclick="choosedAnswer(3)">4. <span id="op4">Option</span></label>
+        </li>
+      </ol>
+
+      <div class="button-wrapper">
+        <button id="back-button" onclick="back()" type="button" ><img src="assets/grey-arrow.svg" /> Previous</button>
+        <button id="next" onclick="next()"><span id="nextText">Next </span><img src="assets/blue-arrow.svg" /></button>
+      </div>
+    </section>
+    
+    
+    
+    
+    <script src="js/script.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script>
+      displayQuestion();
+      // startQuize();
+      
+    </script>
+  </body>
+</html>

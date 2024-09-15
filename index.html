@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="css\style.css"
+    />
+    <title>Login page</title>
+  </head>
+  <body id="body" class="row">
+    <section class="column center" >
+      <img
+        src="assets\login.svg"
+        width="510px"
+        height="529px"
+      />
+    </section>
+    <section class="column">
+      <form id="form">
+        <h2>Login</h2>
+        <p>Please enter your detials below.</p>
+        <h3>Email ID<span>*</span></h3>
+        <input type="text" id="email" class="input-field" placeholder="XYZ@gmail.com" width="300px" required />
+        <h3>Password<span>*</span></h3>
+        <input
+          type="password"
+          id="password"
+          class="input-field"
+          placeholder="Password"
+          required
+        /><br />
+        <input id="login" type="button" value="Login" onclick="on_login()"><br />
+        <button id="sign-in">
+          <img
+            src="assets\Google.png"
+            width="40px"
+            height="40px"
+          />
+          <p>Sign Up with Google</p>
+        </button>
+        <section id="moveSignup">
+         <p id="confirm" class="center">Don't have an account? <button type="button" onclick="on_signup()">Sign up?</button></p>
+        </section>
+      </form>
+    </section>
+    <script src="js/script.js"></script>
+  </body>
+</html>

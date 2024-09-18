@@ -3,11 +3,11 @@ let choosedQuestions = [];
 let questionIndex = 0;
 
 
-// function startQuize() {
-//     const allQuestions = JSON.parse(localStorage.getItem("AllQuestions"));
-//     choosedQuestions = allQuestions.sort(() => 0.5 - Math.random()).slice(0, 10);
-//     displayQuestion(questionIndex)
-// }
+function startQuize() {
+    const allQuestions = JSON.parse(localStorage.getItem("AllQuestions"));
+    choosedQuestions = allQuestions.sort(() => 0.5 - Math.random()).slice(0, 10);
+    displayQuestion(questionIndex)
+}
 
 // const choosedQuestions = [];
 const Questions = [

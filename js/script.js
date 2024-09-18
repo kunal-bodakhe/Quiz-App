@@ -331,6 +331,11 @@ for (let questionIndex = 0; questionIndex < 10; questionIndex++) {
   let randomIndex = Math.floor(Math.random() * Questions.length);
   choosedQuestions.push(Questions[randomIndex]);
 }
+// function startQuize() {
+//   const allQuestions = JSON.parse(localStorage.getItem("AllQuestions"));
+//   choosedQuestions = allQuestions.sort(() => 0.5 - Math.random()).slice(0, 10);
+//   displayQuestion(questionIndex)
+// }
 console.log(choosedQuestions);
 let QuestionsAsked = JSON.stringify(choosedQuestions);
 localStorage.setItem("QuestionsAsked", QuestionsAsked);
@@ -496,7 +501,8 @@ function Submit(){
   }
 
   userTests.push(usertest)
-  localStorage.setItem("userTests", JSON.stringify(userTests));
+  let stringarr=JSON.stringify(userTests);
+  localStorage.setItem("userTests", stringarr);
 
   window.location = "scoreboard.html"
 }

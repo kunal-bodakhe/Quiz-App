@@ -462,17 +462,29 @@ input[type="radio"]:checked + label:active {
   margin-top: -25px;
 }
 #curve {
-  box-shadow: 0 -8px 40px #1c1c1e1a;
-  background-color: #ffffff;
-  height: 180px;
-  margin-top: -180px;
-  margin-left : -50px;
-  position: relative;
-  z-index: 2;
-  border-radius: 50%/15%;
+  /* box-shadow: 0 -8px 40px #1c1c1e1a; */
+  /* background-color: #ffffff; */
+  /* height: 180px; */
+  margin-top: -250px;
+  /* margin-left : -50px; */
+  /* position: relative; */
+  /* z-index: 2; */
+  min-width: 99vw;
+  /* border-radius: 50%/15%; */
  
 }
+#others-wrapper{
+  position: relative;
+  z-index: 1;
+  /* min-height: -100vw; */
+  background-color: #000000;
+  height: fit-content;
+  /* margin-bottom: -250px; */
 
+}
+#otherRanks{
+  margin-top: -350px;
+}
 .others{
   padding: 18px 60px;
   box-shadow: 0 8px 16px 0 rgb(173, 173, 173);
@@ -482,7 +494,8 @@ input[type="radio"]:checked + label:active {
   z-index: 3;
   display: flex;
   justify-content: space-between;
-  top: -100px;
+  
+
 }
 .others>p{
   flex: 1;

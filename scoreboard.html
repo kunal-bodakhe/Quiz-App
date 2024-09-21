@@ -22,7 +22,7 @@
         <img src="assets/temp-profile.png" height="40px" width="40px" />
       </div>
     </header>
-    <hr id="hr" />
+    <!-- <hr id="hr" /> -->
     <section id="scoreboard">
       <h3>Wow you Rank 1st</h3>
       <p>Supporting text</p>
@@ -30,30 +30,35 @@
         <div id="second">
           <img src="">
           <p class="rank">#2</p>
-          <h4 class="scoreCenter">Score</h4>
-          <p class="user">Name</p>
+          <h4 id="rank2" class="scoreCenter">Score</h4>
+          <p id="name2" class="user">Name</p>
         </div>
         <div id="first">
           <img id="circle-image" src="">
           <img class="crown" src="assets/crown.svg" alt="crown">
-          <h4 class="scoreCenter">Score</h4>
-          <p class="user">Name</p>
+          <h4 id="rank1" class="scoreCenter">Score</h4>
+          <p id="name1" class="user">Name</p>
         </div>
         <div id="third">
           <img src="">
           <p class="rank">#3</p>
-          <h4 class="scoreCenter">Score</h4>
-          <p class="user">Name</p>
+          <h4 id="rank3" class="scoreCenter">Score</h4>
+          <p id="name3" class="user">Name</p>
         </div>
       </article>
-      <div id="curve"></div>
-      <div id="otherRanks">
-          <div class="others"><p>#<span>Name</span></p><span>Score</span></div><br>
-          <div class="others"><p>#<span>Name</span></p><span>Score</span></div><br>
-          <div class="others"><p>#<span>Name</span></p><span>Score</span></div><br>
+      <div id="others-wrapper">
+        <img id="curve" src="assets/curve.svg" alt="curve">
+        <div id="otherRanks">
+            <div class="others"><p>#4. <span id="name4">Name</span></p><span id="rank4">Score</span></div><br>
+            <div class="others"><p>#5. <span id="name5">Name</span></p><span id="rank5">Score</span></div><br>
+            <div class="others"><p>#6. <span id="name6">Name</span></p><span id="rank6">Score</span></div><br>
       </div>
-    
+    </div>
     </section>
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <script src="js/main.js"></script>
+    <script>
+      assignRanks();
+    </script>
   </body>
 </html>

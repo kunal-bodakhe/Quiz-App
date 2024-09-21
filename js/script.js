@@ -9,7 +9,12 @@ window.addEventListener('load', (ev) => {
   if (window.location.pathname === "/dashboard.html") {
     window.location = "/"    
   }
-  
+  if (window.location.pathname === "/question.html") {
+    window.location = "/"    
+  }
+  if (window.location.pathname === "/scoreboard.html") {
+    window.location = "/"    
+  }
   
 })
 
@@ -394,6 +399,9 @@ function displayQuestion () {
   document.getElementById("option3").value = choosedQuestions[questionIndex].options[2];
   document.getElementById("option4").value = choosedQuestions[questionIndex].options[3];
 
+
+  var nextIcon = document.getElementById("nextText").innerText;
+  var reminder = document.getElementById("reminder").innerHTML;
   
   document.getElementById("count").innerText = questionIndex + 1;
 
@@ -425,10 +433,11 @@ function choosedAnswer(optionIndex) {
 
 
 
-const nextIcon = document.getElementById("nextText").innerText;
-const reminder = document.getElementById("reminder").innerHTML;
+
 
 function next() {
+
+  
     if(questionIndex == choosedQuestions.length-1) {
       Submit();
       return
@@ -462,16 +471,17 @@ function next() {
 
 
 function back() {
+  
     if(questionIndex == 0) {
       return;
   }
-
   questionIndex--;
   displayQuestion()
+  
   if (questionIndex == 0) {
     document.getElementById("back-button").style = "display:none";
   }
-  if (questionIndex != 9) {
+  if (questionIndex != choosedQuestions.length-1) {
     document.getElementById("nextText").innerText = nextIcon;
     document.getElementById("reminder").innerHTML = reminder;
   }
@@ -496,8 +506,8 @@ function Submit(){
   let usertest = {
       questions: choosedQuestions,
       score: score,
-      name: loggedInUser.name,
-      email: loggedInUser.email,
+      name: loggedInUser[0].name,
+      email: loggedInUser[0].email,
   }
 
   userTests.push(usertest)

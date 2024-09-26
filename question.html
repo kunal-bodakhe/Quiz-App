@@ -20,9 +20,24 @@
         />
         <div id="profile-info">
           <p id="user-name"></p>
-          <img src="assets/temp-profile.png" height="40px" width="40px" />
+          <img id="userProfile" onclick="profile()" src="assets/temp-profile.png" height="40px" width="40px" />
+      </div>
+    </header>
+    <div id="profileSlide" class="hide">
+      <img id="arrowImg" src="assets/68804.png" alt="" />
+      <div class="box">
+        <div class="image-upload">
+          <input type="file" id="image-input" accept="image/*" />
+          <!-- <label for="image-input"> -->
+            <!-- <div class="circle">
+              <img id="uploaded-image" src="" alt="Uploaded Image" /> -->
+              <!-- <input type="file" id="image-input" accept="image/*" /> -->
+            <!-- </div> -->
+          <!-- </label> -->
         </div>
-      </header>
+        <button class="logout-button" onclick="logout()">Logout</button>
+      </div>
+    </div>
     <!-- <hr id="hr" />  -->
 
 
@@ -63,6 +78,7 @@
         <button id="next" onclick="next()"><span id="nextText">Next </span><img src="assets/blue-arrow.svg" /></button>
       </div>
     </section>
+    
     
     
     

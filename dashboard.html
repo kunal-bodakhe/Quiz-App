@@ -19,9 +19,24 @@
       />
       <div id="profile-info">
         <p id="user-name"></p>
-        <img src="assets/temp-profile.png" height="40px" width="40px" />
+        <img id="userProfile" onclick="profile()" src="assets/temp-profile.png" height="40px" width="40px" />
       </div>
     </header>
+    <div id="profileSlide" class="hide">
+      <img id="arrowImg" src="assets/68804.png" alt="" />
+      <div class="box">
+        <div class="image-upload">
+          <input type="file" id="image-input" accept="image/*" />
+          <!-- <label for="image-input"> -->
+            <!-- <div class="circle">
+              <img id="uploaded-image" src="" alt="Uploaded Image" /> -->
+              <!-- <input type="file" id="image-input" accept="image/*" /> -->
+            <!-- </div> -->
+          <!-- </label> -->
+        </div>
+        <button class="logout-button" onclick="logout()">Logout</button>
+      </div>
+    </div>
     <!-- <hr id="hr" /> -->
 
     <section id="first-block">
@@ -73,12 +88,16 @@
           /><br />
         </div><br/>
       </article> -->
+
         <input type="button" id="start-button" onclick="on_start();" value="Start Quiz">
       </form>
       
     </section>
     <!-- <script src="js/script.js"></script> -->
     <script src="js/main.js"></script>
+    <script>
+      
+    </script>
 
   </body>
 </html>

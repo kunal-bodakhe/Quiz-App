@@ -133,6 +133,11 @@ function on_start() {
 user = JSON.parse(localStorage.getItem("loggedInUser"));
 document.getElementById("user-name").innerText = user[0].name;
 
+function logout() {
+  localStorage.removeItem("loggedInUser");
+  window.location = "index.html";
+}
+
 //Question PAGE LOGIC
 
 let choosedQuestions = [];
@@ -360,9 +365,6 @@ function startQuize() {
   choosedQuestions = Questions.sort(() => 0.5 - Math.random()).slice(0, 10);
   displayQuestion();
 }
-// document.addEventListener("DOMContentLoaded", function () {
-//   startQuize();  // Call it once the DOM is fully loaded
-// });
 
 console.log(choosedQuestions);
 let QuestionsAsked = JSON.stringify(choosedQuestions);
@@ -441,24 +443,24 @@ function assignRanks() {
   let rank5 = document.getElementById("rank5");
   let rank6 = document.getElementById("rank6");
 
-  if (rankedTests.length>0) {
+  if (rankedTests.length > 0) {
     rank1.innerText = rankedTests[0].score;
-  } 
-  if (rankedTests.length>1) {
+  }
+  if (rankedTests.length > 1) {
     rank2.innerText = rankedTests[1].score;
-  } 
-  if (rankedTests.length>2) {
+  }
+  if (rankedTests.length > 2) {
     rank3.innerText = rankedTests[2].score;
-  } 
-  if (rankedTests.length>3) {
+  }
+  if (rankedTests.length > 3) {
     rank4.innerText = rankedTests[3].score;
-  } 
-  if (rankedTests.length>4) {
+  }
+  if (rankedTests.length > 4) {
     rank5.innerText = rankedTests[4].score;
-  } 
-  if (rankedTests.length>5) {
+  }
+  if (rankedTests.length > 5) {
     rank6.innerText = rankedTests[5].score;
-  } 
+  }
 
   let Name1 = document.getElementById("name1");
   let Name2 = document.getElementById("name2");
@@ -467,24 +469,28 @@ function assignRanks() {
   let Name5 = document.getElementById("name5");
   let Name6 = document.getElementById("name6");
 
-  if (rankedTests.length>0) {
+  if (rankedTests.length > 0) {
     name1.innerText = rankedTests[0].name;
-  } 
-  if (rankedTests.length>1) {
+  }
+  if (rankedTests.length > 1) {
     name2.innerText = rankedTests[1].name;
-  } 
-  if (rankedTests.length>2) {
+  }
+  if (rankedTests.length > 2) {
     name3.innerText = rankedTests[2].name;
-  } 
-  if (rankedTests.length>3) {
+  }
+  if (rankedTests.length > 3) {
     name4.innerText = rankedTests[3].name;
-  } 
-  if (rankedTests.length>4) {
+  }
+  if (rankedTests.length > 4) {
     name5.innerText = rankedTests[4].name;
-  } 
-  if (rankedTests.length>5) {
+  }
+  if (rankedTests.length > 5) {
     name6.innerText = rankedTests[5].name;
-  } 
+  }
   console.log(rankedTests[0].name);
+}
 
+function profile(){
+  let userProfile=document.getElementById("profileSlide")
+  userProfile.classList.toggle("displayProfile")
 }

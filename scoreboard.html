@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Score Board</title>
-    <link
-      rel="stylesheet"
-      href="css\style.css"
-    />
+    <link rel="stylesheet" href="css\style.css" />
   </head>
   <body id="quiz-body">
     <header id="head">
@@ -19,46 +16,88 @@
       />
       <div id="profile-info">
         <p id="user-name"></p>
-        <img src="assets/temp-profile.png" height="40px" width="40px" />
+        <img id="userProfile" onclick="profile()" src="assets/temp-profile.png" height="40px" width="40px" />
       </div>
     </header>
+    <div id="profileSlide" class="hide">
+      <img id="arrowImg" src="assets/68804.png" alt="" />
+      <div class="box">
+        <div class="image-upload">
+          <input type="file" id="image-input" accept="image/*" />
+          <!-- <label for="image-input"> -->
+            <!-- <div class="circle">
+              <img id="uploaded-image" src="" alt="Uploaded Image" /> -->
+              <!-- <input type="file" id="image-input" accept="image/*" /> -->
+            <!-- </div> -->
+          <!-- </label> -->
+        </div>
+        <button class="logout-button" onclick="logout()">Logout</button>
+      </div>
+    </div>
     <!-- <hr id="hr" /> -->
     <section id="scoreboard">
       <h3>Wow you Rank 1st</h3>
       <p>Supporting text</p>
       <article id="top-ranks">
         <div id="second">
-          <img src="">
+          <img src="" />
           <p class="rank">#2</p>
           <h4 id="rank2" class="scoreCenter">Score</h4>
-          <p id="name2" class="user">Name</p>
+          <p id="name2" class="user ranksFonts">Name</p>
         </div>
         <div id="first">
-          <img id="circle-image" src="">
-          <img class="crown" src="assets/crown.svg" alt="crown">
+          <img id="circle-image" src="" />
+          <img class="crown" src="assets/crown.svg" alt="crown" />
           <h4 id="rank1" class="scoreCenter">Score</h4>
-          <p id="name1" class="user">Name</p>
+          <p id="name1" class="user ranksFonts">Name</p>
         </div>
         <div id="third">
-          <img src="">
+          <img src="" />
           <p class="rank">#3</p>
           <h4 id="rank3" class="scoreCenter">Score</h4>
-          <p id="name3" class="user">Name</p>
+          <p id="name3" class="user ranksFonts">Name</p>
         </div>
       </article>
       <div id="others-wrapper">
-        <img id="curve" src="assets/curve.svg" alt="curve">
+        <img id="curve" src="assets/curve.svg" alt="curve" />
         <div id="otherRanks">
-            <div class="others"><p>#4. <span id="name4">Name</span></p><span id="rank4">Score</span></div><br>
-            <div class="others"><p>#5. <span id="name5">Name</span></p><span id="rank5">Score</span></div><br>
-            <div class="others"><p>#6. <span id="name6">Name</span></p><span id="rank6">Score</span></div><br>
+          <div class="others">
+            <p>
+              #4. <span id="name4" class="rankspadding ranksFonts">Name</span>
+            </p>
+            <span id="rank4">Score</span>
+          </div>
+          <br />
+          <div class="others">
+            <p>
+              #5. <span id="name5" class="rankspadding ranksFonts">Name</span>
+            </p>
+            <span id="rank5">Score</span>
+          </div>
+          <br />
+          <div class="others">
+            <p>
+              #6. <span id="name6" class="rankspadding ranksFonts">Name</span>
+            </p>
+            <span id="rank6">Score</span>
+          </div>
+          <br />
+        </div>
       </div>
-    </div>
     </section>
     <!-- <script src="js/script.js"></script> -->
     <script src="js/main.js"></script>
     <script>
       assignRanks();
+      // const toggleButton = document.getElementById('userProfile');
+      // const circleDiv = document.querySelector('#profileSlide');
+
+      // toggleButton.addEventListener('click', () => {
+      //   circleDiv.classList.toggle('show'); // Toggles the 'hide' class
+      // });
+
+
+
     </script>
   </body>
 </html>

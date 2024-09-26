@@ -494,3 +494,11 @@ function profile(){
   let userProfile=document.getElementById("profileSlide")
   userProfile.classList.toggle("displayProfile")
 }
+function uploadImage(){
+  const userProfile=document.getElementById("userProfile");
+  const uploadImage= document.getElementById("uploadImage");
+  const imageInput=document.getElementById("imageInput").files[0].name;
+
+  userProfile.src="assets/"+imageInput
+}
+

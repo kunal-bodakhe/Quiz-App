@@ -572,15 +572,28 @@ input[type="radio"]:checked + label:active {
 
 /* All User Page  */
 
- /* {
-  border: 2px solid black;
-} */
-#allUsersTable>tr>td {
+#allUsersTable > tr > td {
   border: 2px solid black;
   padding: 5px;
   width: fit-content;
 }
-#allQuestionsTable>tr>td {
+
+/* All Question Page */
+
+#allQuestionsTable > tr > td {
+  border: 2px solid black;
+  padding: 5px;
+  width: fit-content;
+}
+
+/* All result page */
+
+#allResultsTable > tr > td {
+  border: 2px solid black;
+  padding: 5px;
+  width: fit-content;
+}
+#allResultsTable > tr > td>tr>td {
   border: 2px solid black;
   padding: 5px;
   width: fit-content;

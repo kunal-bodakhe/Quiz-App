@@ -1,3 +1,175 @@
+var Questions = [
+  {
+    question: "What does HTML stand for?",
+    options: [
+      "Hyper Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyperlinks and Text Markup Language",
+      "Hyper Textual Markup Language",
+    ],
+    answer: "Hyper Text Markup Language",
+  },
+  {
+    question: "Which HTML element is used to define the title of a document?",
+    options: ["<meta>", "<title>", "<head>", "<body>"],
+    answer: "<title>",
+  },
+  {
+    question: "Which property is used to change the background color in CSS?",
+    options: ["color", "background-color", "bgcolor", "background"],
+    answer: "background-color",
+  },
+  {
+    question: "Which HTML tag is used to define an unordered list?",
+    options: ["<ul>", "<ol>", "<li>", "<list>"],
+    answer: "<ul>",
+  },
+  {
+    question: "What does CSS stand for?",
+    options: [
+      "Cascading Style Sheets",
+      "Colorful Style Sheets",
+      "Computer Style Sheets",
+      "Creative Style Sheets",
+    ],
+    answer: "Cascading Style Sheets",
+  },
+  {
+    question: "Which HTML attribute is used to define inline styles?",
+    options: ["class", "style", "font", "styles"],
+    answer: "style",
+  },
+  {
+    question: "How do you create a comment in CSS?",
+    options: [
+      "// this is a comment",
+      "<!-- this is a comment -->",
+      "/* this is a comment */",
+      "* this is a comment *",
+    ],
+    answer: "/* this is a comment */",
+  },
+  {
+    question: "Which tag is used to create a hyperlink in HTML?",
+    options: ["<link>", "<a>", "<href>", "<hyperlink>"],
+    answer: "<a>",
+  },
+  {
+    question: "Which CSS property controls the text size?",
+    options: ["font-style", "text-size", "font-size", "text-style"],
+    answer: "font-size",
+  },
+  {
+    question: "How do you make a list item in an ordered list in HTML?",
+    options: ["<li>", "<ul>", "<ol>", "<item>"],
+    answer: "<li>",
+  },
+  {
+    question: "Which property is used to change the font of an element in CSS?",
+    options: ["font-style", "font-family", "font-weight", "font"],
+    answer: "font-family",
+  },
+  {
+    question: "How do you insert an image in HTML?",
+    options: [
+      "<img src='image.jpg'>",
+      "<image src='image.jpg'>",
+      "<img href='image.jpg'>",
+      "<picture src='image.jpg'>",
+    ],
+    answer: "<img src='image.jpg'>",
+  },
+  {
+    question:
+      "Which CSS property is used to change the text color of an element?",
+    options: ["text-color", "color", "font-color", "foreground-color"],
+    answer: "color",
+  },
+  {
+    question: "Which HTML element is used to define important text?",
+    options: ["<b>", "<important>", "<strong>", "<i>"],
+    answer: "<strong>",
+  },
+  {
+    question: "How do you center an element horizontally in CSS?",
+    options: [
+      "margin-left:auto; margin-right:auto;",
+      "text-align:center;",
+      "margin:auto;",
+      "center-horizontally:true;",
+    ],
+    answer: "margin:auto;",
+  },
+  {
+    question:
+      "Which attribute is used to provide an alternate text for an image in HTML?",
+    options: ["title", "alt", "src", "longdesc"],
+    answer: "alt",
+  },
+  {
+    question: "How do you apply bold styling to text in CSS?",
+    options: [
+      "font-style:bold;",
+      "font-weight:bold;",
+      "text-style:bold;",
+      "font-bold:true;",
+    ],
+    answer: "font-weight:bold;",
+  },
+  {
+    question: "Which HTML element is used to create a line break?",
+    options: ["<lb>", "<break>", "<br>", "<hr>"],
+    answer: "<br>",
+  },
+  {
+    question: "How do you select an element with id 'header' in CSS?",
+    options: ["#header", ".header", "header", "id=header"],
+    answer: "#header",
+  },
+  {
+    question:
+      "Which CSS property is used to add space between the content and the border of an element?",
+    options: ["margin", "border-spacing", "padding", "spacing"],
+    answer: "padding",
+  },
+  {
+    question: "What is the correct HTML for making a checkbox?",
+    options: [
+      "<checkbox>",
+      "<input type='check'>",
+      "<input type='checkbox'>",
+      "<input checkbox>",
+    ],
+    answer: "<input type='checkbox'>",
+  },
+  {
+    question:
+      "Which property is used to change the left margin of an element in CSS?",
+    options: ["padding-left", "margin-left", "left-margin", "indent-left"],
+    answer: "margin-left",
+  },
+  {
+    question: "How do you create a drop-down list in HTML?",
+    options: ["<input type='dropdown'>", "<select>", "<list>", "<dropdown>"],
+    answer: "<select>",
+  },
+  {
+    question: "What is the correct syntax for linking an external CSS file?",
+    options: [
+      "<stylesheet>style.css</stylesheet>",
+      "<style src='style.css'>",
+      "<link rel='stylesheet' href='style.css'>",
+      "<link src='style.css'>",
+    ],
+    answer: "<link rel='stylesheet' href='style.css'>",
+  },
+  {
+    question:
+      "Which CSS property is used to control the order of stacked elements?",
+    options: ["z-index", "stack-order", "position", "order"],
+    answer: "z-index",
+  },
+];
 // Admin's
 const admins = [
   {
@@ -193,178 +365,7 @@ function uploadImage() {
 let choosedQuestions = [];
 let questionIndex = 0;
 
-const Questions = [
-  {
-    question: "What does HTML stand for?",
-    options: [
-      "Hyper Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyperlinks and Text Markup Language",
-      "Hyper Textual Markup Language",
-    ],
-    answer: "Hyper Text Markup Language",
-  },
-  {
-    question: "Which HTML element is used to define the title of a document?",
-    options: ["<meta>", "<title>", "<head>", "<body>"],
-    answer: "<title>",
-  },
-  {
-    question: "Which property is used to change the background color in CSS?",
-    options: ["color", "background-color", "bgcolor", "background"],
-    answer: "background-color",
-  },
-  {
-    question: "Which HTML tag is used to define an unordered list?",
-    options: ["<ul>", "<ol>", "<li>", "<list>"],
-    answer: "<ul>",
-  },
-  {
-    question: "What does CSS stand for?",
-    options: [
-      "Cascading Style Sheets",
-      "Colorful Style Sheets",
-      "Computer Style Sheets",
-      "Creative Style Sheets",
-    ],
-    answer: "Cascading Style Sheets",
-  },
-  {
-    question: "Which HTML attribute is used to define inline styles?",
-    options: ["class", "style", "font", "styles"],
-    answer: "style",
-  },
-  {
-    question: "How do you create a comment in CSS?",
-    options: [
-      "// this is a comment",
-      "<!-- this is a comment -->",
-      "/* this is a comment */",
-      "* this is a comment *",
-    ],
-    answer: "/* this is a comment */",
-  },
-  {
-    question: "Which tag is used to create a hyperlink in HTML?",
-    options: ["<link>", "<a>", "<href>", "<hyperlink>"],
-    answer: "<a>",
-  },
-  {
-    question: "Which CSS property controls the text size?",
-    options: ["font-style", "text-size", "font-size", "text-style"],
-    answer: "font-size",
-  },
-  {
-    question: "How do you make a list item in an ordered list in HTML?",
-    options: ["<li>", "<ul>", "<ol>", "<item>"],
-    answer: "<li>",
-  },
-  {
-    question: "Which property is used to change the font of an element in CSS?",
-    options: ["font-style", "font-family", "font-weight", "font"],
-    answer: "font-family",
-  },
-  {
-    question: "How do you insert an image in HTML?",
-    options: [
-      "<img src='image.jpg'>",
-      "<image src='image.jpg'>",
-      "<img href='image.jpg'>",
-      "<picture src='image.jpg'>",
-    ],
-    answer: "<img src='image.jpg'>",
-  },
-  {
-    question:
-      "Which CSS property is used to change the text color of an element?",
-    options: ["text-color", "color", "font-color", "foreground-color"],
-    answer: "color",
-  },
-  {
-    question: "Which HTML element is used to define important text?",
-    options: ["<b>", "<important>", "<strong>", "<i>"],
-    answer: "<strong>",
-  },
-  {
-    question: "How do you center an element horizontally in CSS?",
-    options: [
-      "margin-left:auto; margin-right:auto;",
-      "text-align:center;",
-      "margin:auto;",
-      "center-horizontally:true;",
-    ],
-    answer: "margin:auto;",
-  },
-  {
-    question:
-      "Which attribute is used to provide an alternate text for an image in HTML?",
-    options: ["title", "alt", "src", "longdesc"],
-    answer: "alt",
-  },
-  {
-    question: "How do you apply bold styling to text in CSS?",
-    options: [
-      "font-style:bold;",
-      "font-weight:bold;",
-      "text-style:bold;",
-      "font-bold:true;",
-    ],
-    answer: "font-weight:bold;",
-  },
-  {
-    question: "Which HTML element is used to create a line break?",
-    options: ["<lb>", "<break>", "<br>", "<hr>"],
-    answer: "<br>",
-  },
-  {
-    question: "How do you select an element with id 'header' in CSS?",
-    options: ["#header", ".header", "header", "id=header"],
-    answer: "#header",
-  },
-  {
-    question:
-      "Which CSS property is used to add space between the content and the border of an element?",
-    options: ["margin", "border-spacing", "padding", "spacing"],
-    answer: "padding",
-  },
-  {
-    question: "What is the correct HTML for making a checkbox?",
-    options: [
-      "<checkbox>",
-      "<input type='check'>",
-      "<input type='checkbox'>",
-      "<input checkbox>",
-    ],
-    answer: "<input type='checkbox'>",
-  },
-  {
-    question:
-      "Which property is used to change the left margin of an element in CSS?",
-    options: ["padding-left", "margin-left", "left-margin", "indent-left"],
-    answer: "margin-left",
-  },
-  {
-    question: "How do you create a drop-down list in HTML?",
-    options: ["<input type='dropdown'>", "<select>", "<list>", "<dropdown>"],
-    answer: "<select>",
-  },
-  {
-    question: "What is the correct syntax for linking an external CSS file?",
-    options: [
-      "<stylesheet>style.css</stylesheet>",
-      "<style src='style.css'>",
-      "<link rel='stylesheet' href='style.css'>",
-      "<link src='style.css'>",
-    ],
-    answer: "<link rel='stylesheet' href='style.css'>",
-  },
-  {
-    question:
-      "Which CSS property is used to control the order of stacked elements?",
-    options: ["z-index", "stack-order", "position", "order"],
-    answer: "z-index",
-  },
-];
+
 startQuize();
 
 function displayQuestion() {
@@ -563,6 +564,9 @@ function onAllQuestions() {
 function onAllResults() {
   window.location = "allResults.html";
 }
+function onAddQuestions(){
+  window.location="addQuestion.html"
+}
 
 //
 //
@@ -638,6 +642,7 @@ function allQuestions() {
     td8.innerHTML = '<img src="assets/edit.png" width="30px" height="30px">';
   }
 }
+
 //
 //
 //
@@ -743,4 +748,33 @@ function allResult(){
     tr.append(td9)
     td9.innerText=allResults[i].score
   }
+}
+
+//
+//
+//
+//
+// Add Question Page LOGIC
+//
+//
+//
+//
+
+function addQuestions(){
+  var newQuestion=document.getElementById("newQuestion")
+  var firstOption=document.getElementById("firstOption")
+  var secondOption= document.getElementById("secondOption")
+  var thirdOption=document.getElementById("thirdOption")
+  var fourthOption= document.getElementById("fourthOption")
+  var correctAnswer=document.getElementById("correct")
+  
+  var optionsArray=[firstOption.value,secondOption.value,thirdOption.value,fourthOption.value]
+  var addedQuestion={
+    "question": newQuestion.value,
+    "options":optionsArray,
+    "answer":correctAnswer.value
+  }
+  Questions.push(addedQuestion);
+  localStorage.setItem("TotalQuestions",JSON.stringify(Questions));
+  console.log(Questions)
 }

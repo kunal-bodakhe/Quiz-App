@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Question</title>
+    <link rel="stylesheet" href="css\style.css" />
+  </head>
+  <body>
+    <header id="head">
+      <img
+        id="techpathshala-logo"
+        src="assets/techpathshala.svg"
+        width="198px"
+        height="24px"
+      />
+      <div id="profileInfo">
+        <p id="admin-name"></p>
+      </div>
+    </header>
+    <section>
+        <form>
+            Question:<input type="text" id="newQuestion"><br>
+            option 1:<input type="text" id="firstOption"><br>
+            option 2:<input type="text" id="secondOption"><br>
+            option 3:<input type="text" id="thirdOption"><br>
+            option 4:<input type="text" id="fourthOption"><br>
+            correct answer:<input type="text" id="correct"><br>
+            <button id="addQuestionButton" type="button" onclick="addQuestions();">Add Question</button>
+        </form>
+    </section>
+
+    <script src="js/main.js"></script>
+    <!-- <script>addQuestions()</script> -->
+  </body>
+</html>

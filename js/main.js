@@ -16,6 +16,9 @@ window.addEventListener("load", (ev) => {
   if (window.location.pathname === "/allUser.html") {
     allUsers();
   }
+  if (window.location.pathname === "/allQuestions.html") {
+    allQuestions();
+  }
   if (userImage) {
     let loggedInUserImage = JSON.parse(
       localStorage.getItem("loggedInUserImage")
@@ -560,6 +563,9 @@ function assignRanks() {
 function onAllUsers() {
   window.location = "allUser.html";
 }
+function onAllQuestions() {
+  window.location = "allQuestions.html";
+}
 
 //
 //
@@ -572,9 +578,8 @@ function onAllUsers() {
 //
 
 function allUsers() {
-  console.log("hello");
-  const allUser = JSON.parse(localStorage.getItem("user"));
-  const table = document.getElementById("allUsersTable");
+  var allUser = JSON.parse(localStorage.getItem("user"));
+  var table = document.getElementById("allUsersTable");
   for (let i = 0; i < allUser.length; i++) {
     var tr = document.createElement("tr");
     table.append(tr);
@@ -590,5 +595,40 @@ function allUsers() {
     var td3 = document.createElement("td");
     tr.append(td3);
     td3.innerText = allUser[i].password;
+  }
+}
+function allQuestions() {
+  var allQuestion = JSON.parse(localStorage.getItem("AllQuestions"));
+  var table = document.getElementById("allQuestionsTable");
+  for (let i = 0; i < allQuestion.length; i++) {
+    var tr = document.createElement("tr");
+    table.append(tr);
+    var td = document.createElement("td");
+    tr.append(td);
+    td.innerText = i + 1;
+    var td1 = document.createElement("td");
+    tr.append(td1);
+    td1.innerText = allQuestion[i].question;
+    var td2 = document.createElement("td");
+    tr.append(td2);
+    td2.innerText = allQuestion[i].options[0];
+    var td3 = document.createElement("td");
+    tr.append(td3);
+    td3.innerText = allQuestion[i].options[1];
+    var td4 = document.createElement("td");
+    tr.append(td4);
+    td4.innerText = allQuestion[i].options[2];
+    var td5 = document.createElement("td");
+    tr.append(td5);
+    td5.innerText = allQuestion[i].options[3];
+    var td6 = document.createElement("td");
+    tr.append(td6);
+    td6.innerText = allQuestion[i].answer;
+    var td7 = document.createElement("td");
+    tr.append(td7);
+    td7.innerHTML='<img src="assets/delete.png" width="30px" height="30px">'
+    var td8=document.createElement("td")
+    tr.append(td8)
+    td8.innerHTML='<img src="assets/edit.png" width="30px" height="30px">'
   }
 }

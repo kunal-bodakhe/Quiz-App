@@ -580,3 +580,8 @@ input[type="radio"]:checked + label:active {
   padding: 5px;
   width: fit-content;
 }
+#allQuestionsTable>tr>td {
+  border: 2px solid black;
+  padding: 5px;
+  width: fit-content;
+}

@@ -1,8 +1,21 @@
+// Admin's
+const admins=[{
+  "email":"kunalbodakhe1230@gmail.com",
+  "password":"kunal@2003"
+}]
+
 //SCREEN LOAD CODE
 
 window.addEventListener("load", (ev) => {
+  let userProfile=document.getElementById("userProfile");
+  const userImage= localStorage.getItem("loggedInUserImage");
   const isLoggedIn = localStorage.getItem("loggedInUser");
 
+  if (userImage) {
+    let loggedInUserImage=JSON.parse(localStorage.getItem("loggedInUserImage"));
+    userProfile.src=loggedInUserImage;
+
+  }
   if (isLoggedIn) {
     return;
   }
@@ -16,10 +29,17 @@ window.addEventListener("load", (ev) => {
   if (window.location.pathname === "/scoreboard.html") {
     window.location = "/";
   }
+  
 });
-
+// 
+// 
+// 
+// 
 //SIGN-UP PAGE LOGIC
-
+// 
+// 
+// 
+// 
 function on_signup() {
   window.location = "signup.html";
 }
@@ -124,9 +144,15 @@ function on_login() {
     alert("Account doesnt Exist");
   }
 }
-
+// 
+// 
+// 
+// 
 //DASHBOARD LOGIC
-
+// 
+// 
+// 
+// 
 function on_start() {
   window.location = "question.html";
 }
@@ -138,8 +164,29 @@ function logout() {
   window.location = "index.html";
 }
 
-//Question PAGE LOGIC
+function profile(){
+  let userProfile=document.getElementById("profileSlide")
+  userProfile.classList.toggle("displayProfile")
+}
+function uploadImage(){
+  let userProfile=document.getElementById("userProfile");
+  let uploadImage= document.getElementById("uploadImage");
+  let imageInput=document.getElementById("imageInput").files[0].name;
+  let imagePath="assets/"+imageInput;
+  let stringedImagePath=JSON.stringify(imagePath); 
+  localStorage.setItem("loggedInUserImage",stringedImagePath)
 
+  userProfile.src=imagePath;
+}
+// 
+// 
+// 
+// 
+//Question PAGE LOGIC
+// 
+// 
+// 
+// 
 let choosedQuestions = [];
 let questionIndex = 0;
 
@@ -427,9 +474,15 @@ function Submit() {
 
   window.location = "scoreboard.html";
 }
-
+// 
+// 
+// 
+// 
 //SCOREBOARD PAGE LOGIC
-
+// 
+// 
+// 
+// 
 function assignRanks() {
   let storedArray = JSON.parse(localStorage.getItem("userTests"));
   // const scores = storedArray.map((object) => object.score);
@@ -489,16 +542,14 @@ function assignRanks() {
   }
   console.log(rankedTests[0].name);
 }
+// 
+// 
+// 
+// 
+// ADMIN PAGE LOGIC
+// 
+// 
+// 
+// 
 
-function profile(){
-  let userProfile=document.getElementById("profileSlide")
-  userProfile.classList.toggle("displayProfile")
-}
-function uploadImage(){
-  const userProfile=document.getElementById("userProfile");
-  const uploadImage= document.getElementById("uploadImage");
-  const imageInput=document.getElementById("imageInput").files[0].name;
-
-  userProfile.src="assets/"+imageInput
-}
 

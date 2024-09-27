@@ -5,7 +5,6 @@
 }
 .row {
   display: flex;
-
   align-items: center;
 }
 .column {
@@ -131,7 +130,6 @@
   display: flex;
   padding: 16px 0px 16px 0px;
   border-bottom: 1px hsl(0, 0%, 80%) solid;
-
 }
 #techpathshala-logo {
   flex: 1;
@@ -229,6 +227,62 @@
   left: 34.8%;
   top: 18px;
 }
+.box {
+  position: relative;
+  z-index: 3;
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border: 2px solid #000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageUpload {
+  margin-bottom: 40px;
+  text-align: center;
+}
+#imageInput {
+  margin: 20px 0 20px 20px;
+  width: 180px;
+}
+
+.profileButtons {
+  background-color: #0008ff;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.profileButtons:hover {
+  background-color: #4434a7;
+}
+#arrowImg {
+  position: relative;
+  z-index: 2;
+  top: 40px;
+  left: 150px;
+  height: 50px;
+  width: 50px;
+}
+#profileSlide {
+  position: absolute;
+  z-index: 2;
+  height: 300px;
+  margin-top: -40px;
+  padding-left: 1260px;
+}
+
+.hide {
+  display: none;
+}
+
+.displayProfile {
+  display: block;
+}
+
 
 /* QUESTION PAGE */
 
@@ -248,7 +302,7 @@
   z-index: 1;
   border-radius: 16px;
   border: none;
-} 
+}
 #progressbar > span {
   background-color: #f3bd00;
   /* width: 10%; */
@@ -316,10 +370,9 @@
   font-weight: 500;
   background-color: white;
   border: none;
- flex: 1;
-
+  flex: 1;
 }
-#back-button{
+#back-button {
   color: #b4b4b4;
   font-size: 32px;
   line-height: 38px;
@@ -333,7 +386,7 @@
   transform: rotate(180deg);
 }
 
-.button-wrapper{
+.button-wrapper {
   display: flex;
 }
 
@@ -355,16 +408,7 @@ input[type="radio"]:checked + label:active {
   box-shadow: 0 0 20px #d0d0d0;
 }
 
-
-
-
-
 /* Scoreboard */
-
-
-
-
-
 
 #scoreboard > h3 {
   margin: 0;
@@ -395,7 +439,6 @@ input[type="radio"]:checked + label:active {
   height: 419px;
   border-radius: 16px 16px 0 0;
   margin: 146px 20px 0 20px;
-
 }
 #second {
   background-color: #f4ce4a;
@@ -459,7 +502,7 @@ input[type="radio"]:checked + label:active {
   font-weight: 700;
   margin-top: -40px;
 }
-.user{
+.user {
   text-align: center;
   margin-top: -25px;
 }
@@ -473,21 +516,19 @@ input[type="radio"]:checked + label:active {
   /* z-index: 2; */
   min-width: 99vw;
   /* border-radius: 50%/15%; */
- 
 }
-#others-wrapper{
+#others-wrapper {
   position: relative;
   z-index: 1;
   /* min-height: -100vw; */
   background-color: #000000;
   height: fit-content;
   /* margin-bottom: -250px; */
-
 }
-#otherRanks{
+#otherRanks {
   margin-top: -350px;
 }
-.others{
+.others {
   padding: 18px 60px;
   box-shadow: 0 8px 16px 0 rgb(173, 173, 173);
   border-radius: 10px white;
@@ -496,80 +537,36 @@ input[type="radio"]:checked + label:active {
   z-index: 3;
   display: flex;
   justify-content: space-between;
-  
-
 }
-.others>p{
+.others > p {
   flex: 1;
   margin: 0;
   font-size: 30px;
 }
-.others{
+.others {
   flex: 1;
   font-size: 30px;
 }
-.ranksFonts{
+.ranksFonts {
   font-family: inter, sans-serif;
   font-size: 24px;
   font-weight: 500;
 }
-.rankspadding{
+.rankspadding {
   padding-left: 10px;
 }
-.box {
-  position: relative;
-  z-index: 3;
-  width: 200px;
-  height: 200px;
-  background-color: #fff;
-  border: 2px solid #000;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.imageUpload {
-  margin-bottom: 40px;
+/* Admin */
+.centerBox{
   text-align: center;
+  margin: 50px 0 0 0;
 }
-#imageInput{
-  margin: 20px 0 20px 20px;
-  width: 180px;
+.inline{
+  display: inline-flex;
 }
-
-.profileButtons {
-  background-color: #0008ff;
+.boxes{
+  height: 250px;
+  width: 250px;
   border: 2px solid #000;
-  padding: 10px 20px;
-  cursor: pointer;
+  margin: 10px;
 }
-
-.profileButtons:hover {
-  background-color: #4434a7;
-}
-#arrowImg{
-  position: relative;
-  z-index: 2;
-  top: 40px;
-  left: 150px;
-  height: 50px;
-  width: 50px;
-}
-#profileSlide{
-position: absolute;
-z-index: 2;
-height: 300px;
-margin-top: -40px;
-padding-left: 1260px;
-}
-
-.hide {
-  display: none;
-}
-
-.displayProfile{
-  display: block;
-}
-
-

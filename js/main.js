@@ -1,21 +1,28 @@
 // Admin's
-const admins=[{
-  "email":"kunalbodakhe1230@gmail.com",
-  "password":"kunal@2003"
-}]
+const admins = [
+  {
+    email: "kunalbodakhe1230@gmail.com",
+    password: "kunal@2003",
+  },
+];
 
 //SCREEN LOAD CODE
 
 window.addEventListener("load", (ev) => {
-  let userProfile=document.getElementById("userProfile");
-  const userImage= localStorage.getItem("loggedInUserImage");
+  let userProfile = document.getElementById("userProfile");
+  const userImage = localStorage.getItem("loggedInUserImage");
   const isLoggedIn = localStorage.getItem("loggedInUser");
 
-  if (userImage) {
-    let loggedInUserImage=JSON.parse(localStorage.getItem("loggedInUserImage"));
-    userProfile.src=loggedInUserImage;
-
+  if (window.location.pathname === "/allUser.html") {
+    allUsers();
   }
+  if (userImage) {
+    let loggedInUserImage = JSON.parse(
+      localStorage.getItem("loggedInUserImage")
+    );
+    userProfile.src = loggedInUserImage;
+  }
+
   if (isLoggedIn) {
     return;
   }
@@ -29,17 +36,16 @@ window.addEventListener("load", (ev) => {
   if (window.location.pathname === "/scoreboard.html") {
     window.location = "/";
   }
-  
 });
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 //SIGN-UP PAGE LOGIC
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 function on_signup() {
   window.location = "signup.html";
 }
@@ -144,15 +150,15 @@ function on_login() {
     alert("Account doesnt Exist");
   }
 }
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 //DASHBOARD LOGIC
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 function on_start() {
   window.location = "question.html";
 }
@@ -164,29 +170,29 @@ function logout() {
   window.location = "index.html";
 }
 
-function profile(){
-  let userProfile=document.getElementById("profileSlide")
-  userProfile.classList.toggle("displayProfile")
+function profile() {
+  let userProfile = document.getElementById("profileSlide");
+  userProfile.classList.toggle("displayProfile");
 }
-function uploadImage(){
-  let userProfile=document.getElementById("userProfile");
-  let uploadImage= document.getElementById("uploadImage");
-  let imageInput=document.getElementById("imageInput").files[0].name;
-  let imagePath="assets/"+imageInput;
-  let stringedImagePath=JSON.stringify(imagePath); 
-  localStorage.setItem("loggedInUserImage",stringedImagePath)
+function uploadImage() {
+  let userProfile = document.getElementById("userProfile");
+  let uploadImage = document.getElementById("uploadImage");
+  let imageInput = document.getElementById("imageInput").files[0].name;
+  let imagePath = "assets/" + imageInput;
+  let stringedImagePath = JSON.stringify(imagePath);
+  localStorage.setItem("loggedInUserImage", stringedImagePath);
 
-  userProfile.src=imagePath;
+  userProfile.src = imagePath;
 }
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 //Question PAGE LOGIC
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 let choosedQuestions = [];
 let questionIndex = 0;
 
@@ -474,15 +480,15 @@ function Submit() {
 
   window.location = "scoreboard.html";
 }
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 //SCOREBOARD PAGE LOGIC
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 function assignRanks() {
   let storedArray = JSON.parse(localStorage.getItem("userTests"));
   // const scores = storedArray.map((object) => object.score);
@@ -542,14 +548,47 @@ function assignRanks() {
   }
   console.log(rankedTests[0].name);
 }
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 // ADMIN PAGE LOGIC
-// 
-// 
-// 
-// 
+//
+//
+//
+//
+function onAllUsers() {
+  window.location = "allUser.html";
+}
 
+//
+//
+//
+//
+// All User Page LOGIC
+//
+//
+//
+//
 
+function allUsers() {
+  console.log("hello");
+  const allUser = JSON.parse(localStorage.getItem("user"));
+  const table = document.getElementById("allUsersTable");
+  for (let i = 0; i < allUser.length; i++) {
+    var tr = document.createElement("tr");
+    table.append(tr);
+    var td = document.createElement("td");
+    tr.append(td);
+    td.innerText = i + 1;
+    var td1 = document.createElement("td");
+    tr.append(td1);
+    td1.innerText = allUser[i].name;
+    var td2 = document.createElement("td");
+    tr.append(td2);
+    td2.innerText = allUser[i].email;
+    var td3 = document.createElement("td");
+    tr.append(td3);
+    td3.innerText = allUser[i].password;
+  }
+}

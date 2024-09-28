@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="..\css\style.css" />
+    <link rel="stylesheet" href="admin.css" />
     <title>Admin Portal</title>
   </head>
   <body>
@@ -18,39 +18,36 @@
         <p id="admin-name"></p>
       </div>
     </header>
-    <section class="centerBox">
-      <div class="inline">
-        <div id="allUser" class="boxes" onclick="onAllUsers()">
-          <h2>All Users</h2>
-          <img src="../assets/users.png" alt="" height="150px" width="150px" />
+    <section>
+      <div>
+        <div id="allUser" onclick="onAllUsers()">
+          <h2><img src="../assets/users.png" alt="" height="30px" width="30px" />All Users</h2>
         </div>
-        <div id="allQuestions" class="boxes" onclick="onAllQuestions()">
-          <h2>All Questions</h2>
-          <img
+        <div id="allQuestions" onclick="onAllQuestions()">
+          <h2><img
             src="../assets/Questionbook.png"
             alt=""
-            height="150px"
-            width="150px"
-          />
+            height="30px"
+            width="30px"
+          />All Questions</h2>
         </div>
       </div>
       <br />
-      <div class="inline">
-        <div id="allScore" class="boxes" onclick="onAllResults()">
-          <h2>All Results</h2>
-          <img src="../assets/scores.png" alt="" height="150px" width="150px" />
+      <div>
+        <div id="allScore" onclick="onAllResults()">
+          <h2><img src="../assets/scores.png" alt="" height="30px" width="30px" />All Results</h2>
+          
         </div>
-        <div id="addQuestions" class="boxes" onclick="onAddQuestions()">
-          <h2>Add Questions</h2>
-          <img
+        <div id="addQuestions" onclick="onAddQuestions()">
+          <h2><img
             src="../assets/Add question.png"
             alt=""
-            height="150px"
-            width="150px"
-          />
+            height="30px"
+            width="30px"
+          />Add Questions</h2>
         </div>
       </div>
     </section>
-    <script src="../js/main.js"></script>
+    <script src="admin.js"></script>
   </body>
 </html>

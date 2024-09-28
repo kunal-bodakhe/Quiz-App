@@ -1,0 +1,71 @@
+
+#head {
+    display: flex;
+    padding: 16px 0px 16px 0px;
+    border-bottom: 1px hsl(0, 0%, 80%) solid;
+  }
+  #techpathshala-logo {
+    flex: 1;
+    padding-top: 8px;
+    margin: 0;
+    justify-content: start;
+    margin-left: -930px;
+  }
+  #profileInfo {
+    position: relative;
+    z-index: 3;
+    flex: 1;
+    display: inline-flex;
+    max-width: 268px;
+    height: 40px;
+    justify-content: space-evenly;
+    margin: 0 25px 0 0;
+  }
+  #user-name {
+    padding: 0;
+  }/* Admin */
+.borderCollape{
+    border-collapse: collapse;
+  }
+  .centerBox {
+    text-align: center;
+    margin: 50px 0 0 0;
+  }
+  .inline {
+    display: inline-flex;
+  }
+  .boxes {
+    height: 250px;
+    width: 250px;
+    border: 2px solid #000;
+    margin: 10px;
+  }
+  
+  /* All User Page  */
+  
+  #allUsersTable > tr > td {
+    border: 2px solid black;
+    padding: 5px;
+    width: fit-content;
+  }
+  
+  /* All Question Page */
+  
+  #allQuestionsTable > tr > td {
+    border: 2px solid black;
+    padding: 5px;
+    width: fit-content;
+  }
+  
+  /* All result page */
+  
+  #allResultsTable > tr > td {
+    border: 2px solid black;
+    padding: 5px;
+    width: fit-content;
+  }
+  #allResultsTable > tr > td>tr>td {
+    border: 2px solid black;
+    padding: 5px;
+    width: fit-content;
+  }

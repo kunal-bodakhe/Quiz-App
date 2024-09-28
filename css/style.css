@@ -555,49 +555,4 @@ input[type="radio"]:checked + label:active {
   padding-left: 10px;
 }
 
-/* Admin */
-.borderCollape{
-  border-collapse: collapse;
-}
-.centerBox {
-  text-align: center;
-  margin: 50px 0 0 0;
-}
-.inline {
-  display: inline-flex;
-}
-.boxes {
-  height: 250px;
-  width: 250px;
-  border: 2px solid #000;
-  margin: 10px;
-}
 
-/* All User Page  */
-
-#allUsersTable > tr > td {
-  border: 2px solid black;
-  padding: 5px;
-  width: fit-content;
-}
-
-/* All Question Page */
-
-#allQuestionsTable > tr > td {
-  border: 2px solid black;
-  padding: 5px;
-  width: fit-content;
-}
-
-/* All result page */
-
-#allResultsTable > tr > td {
-  border: 2px solid black;
-  padding: 5px;
-  width: fit-content;
-}
-#allResultsTable > tr > td>tr>td {
-  border: 2px solid black;
-  padding: 5px;
-  width: fit-content;
-}

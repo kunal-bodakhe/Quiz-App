@@ -170,6 +170,7 @@ var Questions = [
     answer: "z-index",
   },
 ];
+localStorage.setItem("AllQuestions",JSON.stringify  (Questions))
 // Admin's
 const admins = [
   {
@@ -636,10 +637,10 @@ function allQuestions() {
     td6.innerText = allQuestion[i].answer;
     var td7 = document.createElement("td");
     tr.append(td7);
-    td7.innerHTML = '<img src="assets/delete.png" width="30px" height="30px">';
+    td7.innerHTML = '<img src="../assets/delete.png" width="30px" height="30px">';
     var td8 = document.createElement("td");
     tr.append(td8);
-    td8.innerHTML = '<img src="assets/edit.png" width="30px" height="30px">';
+    td8.innerHTML = '<img src="../assets/edit.png" width="30px" height="30px">';
   }
 }
 
@@ -775,6 +776,6 @@ function addQuestions(){
     "answer":correctAnswer.value
   }
   Questions.push(addedQuestion);
-  localStorage.setItem("TotalQuestions",JSON.stringify(Questions));
+  localStorage.setItem("AllQuestions",JSON.stringify(Questions));
   console.log(Questions)
 }

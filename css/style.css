@@ -292,13 +292,14 @@
   margin: 0;
 }
 #timer{
+  max-width: fit-content;
   font-size: 24px;
   font-weight: bold;
-  position: fixed;
-  left: 90%;
-  top: 12%;
+  margin-left: 90%;
+  margin-top: -55px;
   background-color: #f3bd00;
-  padding: 5px 10px;
+  padding: 5px 15px 5px 10px;
+  box-sizing: border-box;
   border-radius: 50px;
 }
 #timer:hover{
@@ -307,10 +308,9 @@
 #date{
   font-size: 24px;
   font-weight: bold;
-  position: fixed;
-  left: 80%;
-  top: 13%;
-  
+  margin-left: 81%;
+  margin-top: -3%;
+  margin-bottom: 20px;
 }
 #progressbar {
   position: relative;

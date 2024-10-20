@@ -363,6 +363,39 @@ function uploadImage() {
 //
 //
 //
+function displayCurrentDate() {
+  let currentDate = new Date();
+  let day = currentDate.getDate();
+  let month = currentDate.getMonth() + 1; // Months are zero-based
+  let year = currentDate.getFullYear();
+
+  let formattedDate = (day < 10 ? '0' + day : day) + '/' +
+                      (month < 10 ? '0' + month : month) + '/' + year;
+  document.getElementById('date').innerHTML = formattedDate;
+}
+
+displayCurrentDate();
+
+// Start the timer
+let startTime = new Date().getTime();
+let timerElement = document.getElementById('timer');
+
+function updateTimer() {
+  let currentTime = new Date().getTime();
+  let timeDifference = currentTime - startTime;
+  let seconds = Math.floor((timeDifference / 1000) % 60);
+  let minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+
+  let minutesDisplay = minutes < 10 ? '0' + minutes : minutes;
+  let secondsDisplay = seconds < 10 ? '0' + seconds : seconds;
+
+  timerElement.innerHTML ='<sub><img src="assets/timeroutline.png" height="30px" width="30px"></sub>'+ minutesDisplay + ":" + secondsDisplay;
+}
+
+let timerInterval = setInterval(updateTimer, 1000);
+
+
+
 let choosedQuestions = [];
 let questionIndex = 0;
 
@@ -429,6 +462,7 @@ function choosedAnswer(optionIndex) {
 
 function next() {
   if (questionIndex == choosedQuestions.length - 1) {
+    
     Submit();
 
     return;
@@ -456,6 +490,22 @@ function back() {
 }
 
 function Submit() {
+  // Save Button functionality
+  let endTime = new Date().getTime();
+      let timeSpent = endTime - startTime;
+    
+      let totalSeconds = Math.floor(timeSpent / 1000);
+      let secondsTaken = totalSeconds % 60;
+      let minutesTaken = Math.floor(totalSeconds / 60);
+    
+      let date = new Date().toLocaleDateString(); // Get the current date
+     console.log("working")
+      // Store date and time taken in localStorage
+      let quizDateTimer={
+        "quizDate":date,
+        "quizMinutes":minutesTaken,
+        "quizSeconds":secondsTaken
+      }
   let score = 0;
   for (let i = 0; i < choosedQuestions.length; i++) {
     if (choosedQuestions[i].choosedAnswer == choosedQuestions[i].answer) {
@@ -471,6 +521,7 @@ function Submit() {
     score: score,
     name: loggedInUser[0].name,
     email: loggedInUser[0].email,
+    quizDateTimer:quizDateTimer,
   };
 
   userTests.push(usertest);

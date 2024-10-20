@@ -291,6 +291,27 @@
   font-weight: 600;
   margin: 0;
 }
+#timer{
+  font-size: 24px;
+  font-weight: bold;
+  position: fixed;
+  left: 90%;
+  top: 12%;
+  background-color: #f3bd00;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+#timer:hover{
+  box-shadow: 0 0 10px rgb(176, 175, 175);
+}
+#date{
+  font-size: 24px;
+  font-weight: bold;
+  position: fixed;
+  left: 80%;
+  top: 13%;
+  
+}
 #progressbar {
   position: relative;
   margin-top: 16px;

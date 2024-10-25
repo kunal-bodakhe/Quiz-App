@@ -8,6 +8,11 @@
   </head>
   <body>
     <header id="head">
+      <div id="menuBox" onclick="onMenu()">
+        <div class="menuLine"></div>
+        <div id="menuHover"></div>
+        <div class="menuLine"></div>
+      </div>
       <img
         id="techpathshala-logo"
         src="../assets/techpathshala.svg"
@@ -18,19 +23,53 @@
         <p id="admin-name"></p>
       </div>
     </header>
-    <section>
+    <section class="inline">
+      <section id="dashboard" class="">
+        <h1 class="center">DASHBOARD</h1>
+        
+        <div class="boxes" id="allUser" onclick="window.location='index.html'">
+          <h2><img src="../assets/home.jpg" alt="" height="30px" width="30px" /><sup>Home</sup></h2>
+        </div>
+          <div class="boxes" id="allUser" onclick="onAllUsers()">
+            <h2><img src="../assets/users.png" alt="" height="30px" width="30px" /><sup>All Users</sup></h2>
+          </div>
+          <div class="boxes" id="allQuestions" onclick="onAllQuestions()">
+            <h2><img
+              src="../assets/Questionbook.png"
+              alt=""
+              height="30px"
+              width="30px"
+            /><sup>All Questions</sup></h2>
+          </div>
+          <div class="boxes" id="allScore" onclick="onAllResults()">
+            <h2><img src="../assets/scores.png" alt="" height="30px" width="30px" /><sup>All Results</sup></h2>
+            
+          </div>
+          <div class="boxes" id="addQuestions" onclick="onAddQuestions()">
+            <h2><img
+              src="../assets/Add question.png"
+              alt=""
+              height="30px"
+              width="30px"
+            /><sup>Add Questions</sup></h2>
+          </div>
+        
+      </section>
+    <section id="userTable">
       <table class="borderCollape">
         <tbody id="allUsersTable">
           <tr>
-            <td>SrNo.</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Password</td>
+            <th class="thColor">SrNo.</th>
+            <th class="thColor">Name</th>
+            <th class="thColor">Email</th>
+            <th class="thColor">No of Test Given</th>
+            <th class="thColor">Score</th>
+            <th class="thColor">View Test</th>
           </tr>
         </tbody>
       </table>
     </section>
-
+  </section>  
     <script src="admin.js"></script>
     <script>allUsers()</script>
   </body>

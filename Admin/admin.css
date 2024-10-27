@@ -56,6 +56,7 @@ transition: all 0.5s ease;
 }
 .box{
   border: 2px solid black;
+  color: #5c5c5c;
   padding: 20px 50px;
   max-width: fit-content;
   max-height: fit-content;
@@ -67,7 +68,7 @@ transition: all 0.5s ease;
   left: 35%;
 } */
 #dashboard>div:hover{
-  background-color: #f3bd00;
+  color: #f3bd00;
   position: relative;
   left: 40px;
 }
@@ -77,6 +78,7 @@ transition: all 0.5s ease;
   background-color: #f7f7f7;
   min-height: 90vh;
   border-right: 2px solid #c4c4c4;
+  font-size: 14px;
   
 }
 #dashboard>h1{
@@ -133,28 +135,30 @@ transition: all 0.5s ease;
 /* All User Page  */
 #userTable{
   padding: 25px 45px;
-  margin: 30px 80px;
-  background-color: #d7d7d7;
+  margin: 30px 50px;
+  /* background-color: #000000;  */
 }
 #allUsersTable{
-  border: 2px solid rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
   background-color: #ffffff;
   /* max-width: 1500px; */
   height: fit-content;
   transition: 0.5s ease-in-out;
 }
 #allUsersTable > tr > td {
+  font-family: sans-serif;
+  color: #5c5c5c;
   text-align: center;
   /* border: 2px solid black; */
   width: 100px;
   padding: 10px 55px;
-  border-top: 2px black solid;
-  border-right: 2px black solid;
-  border-left: 2px black solid;
+  border-top: 1px black solid;
+  /* border-right: 2px black solid; */
+  /* border-left: 2px black solid; */
   transition: 0.5s ease-in-out;
 }
 .thColor{
-  background-color: rgb(185, 185, 185);
+  background-color: rgb(234, 234, 234);
   /* border-right: 2px black solid;
   border-left: 2px black solid;
   border-top: 2px black solid; */

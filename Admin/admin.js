@@ -22,16 +22,16 @@ function onAddQuestions() {
 function onMenu() {
   let dashboard = document.getElementById("dashboard");
   dashboard.classList.toggle("hide");
-  let userTable = document.getElementById("allUsersTable");
+  let userTable = document.getElementById("userTable");
   let adminPage = document.getElementsByClassName("hide");
   let admin = document.getElementById("admin");
 
   if (adminPage.length > 0) {
     admin.classList.add("dashboardShow");
+    console.log("working")
   } else {
     admin.classList.remove("dashboardShow");
   }
-  // dashboard.classList.toggle("adminHide");
 }
 
 //
@@ -236,50 +236,6 @@ function allResult() {
       tr1.append(coloum);
       coloum.innerText = allResults[i].questions[index].options[1];
     }
-
-    var td5 = document.createElement("td");
-    tr.append(td5);
-
-    for (let index = 0; index < allResults[i].questions.length; index++) {
-      let tr1 = document.createElement("tr");
-      td5.append(tr1);
-      let coloum = document.createElement("td");
-      tr1.append(coloum);
-      coloum.innerText = allResults[i].questions[index].options[2];
-    }
-
-    var td6 = document.createElement("td");
-    tr.append(td6);
-
-    for (let index = 0; index < allResults[i].questions.length; index++) {
-      let tr1 = document.createElement("tr");
-      td6.append(tr1);
-      let coloum = document.createElement("td");
-      tr1.append(coloum);
-      coloum.innerText = allResults[i].questions[index].options[3];
-    }
-
-    var td7 = document.createElement("td");
-    tr.append(td7);
-
-    for (let index = 0; index < allResults[i].questions.length; index++) {
-      let tr1 = document.createElement("tr");
-      td7.append(tr1);
-      let coloum = document.createElement("td");
-      tr1.append(coloum);
-      coloum.innerText = allResults[i].questions[index].answer;
-    }
-
-    var td8 = document.createElement("td");
-    tr.append(td8);
-    for (let index = 0; index < allResults[i].questions.length; index++) {
-      let tr1 = document.createElement("tr");
-      td8.append(tr1);
-      let coloum = document.createElement("td");
-      tr1.append(coloum);
-      coloum.innerText = allResults[i].questions[index].choosedAnswer;
-    }
-
     var td9 = document.createElement("td");
     tr.append(td9);
     td9.innerText = allResults[i].score;

@@ -32,6 +32,12 @@ function onMenu() {
   } else {
     admin.classList.remove("dashboardShow");
   }
+  if (adminPage.length > 0) {
+    userTable.style="margin-left: 50px";
+    console.log("working 2")
+  } else {
+    userTable.style="margin-left: 300px";
+  }
 }
 
 //

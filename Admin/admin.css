@@ -147,6 +147,7 @@ transition: all 2s ease;
 
 /* All User Page  */
 #userTable{
+  /* font-size: 12px; */
   padding: 25px 45px;
   margin: 100px 50px 30px 50px;
   /* background-color: #000000;  */
@@ -163,6 +164,7 @@ transition: all 2s ease;
   transition: 0.5s ease-in-out;
 }
 #allUsersTable > tr > td {
+  font-size: 14px;
   /* font-family: sans-serif; */
   color: rgb(139, 139, 139);
   text-align: center;
@@ -175,13 +177,15 @@ transition: all 2s ease;
   transition: 0.5s ease-in-out;
 }
 .thColor{
+  font-size: 14px;
+  line-break: none;
   background-color: rgb(234, 234, 234);
   /* border-right: 2px black solid;
   border-left: 2px black solid;
   border-top: 2px black solid; */
   /* padding: 0px 50px; */
   width: 15%;
-  padding: 10px 35px;
+  padding: 10px 15px;
   transition: 0.5s ease-in-out;
 } 
   

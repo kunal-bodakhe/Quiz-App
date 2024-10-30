@@ -19,26 +19,40 @@ function onAllResults() {
 function onAddQuestions() {
   window.location = "addQuestion.html";
 }
+for (let i = 0; i < userTable.rows; i++) {
+      // Loop through each cell in the current row
+      for (let j = 0; j < userTable.rows[i].cells.length; j++) {
+          const cell = userTable.rows[i].cells[j];
+  
+          // Check if the cell is empty or contains 'undefined', and replace it
+          if (cell.innerText === "undefined" || cell.innerText.trim() === "") {
+              cell.innerText = "-";
+          }
+      }
+  }
 function onMenu() {
   let dashboard = document.getElementById("dashboard");
   dashboard.classList.toggle("hide");
   let userTable = document.getElementById("userTable");
   let adminPage = document.getElementsByClassName("hide");
   let admin = document.getElementById("admin");
-
+  if(window.location.pathname === "/Admin/index.html"){
   if (adminPage.length > 0) {
     admin.classList.add("dashboardShow");
     console.log("working")
   } else {
     admin.classList.remove("dashboardShow");
-  }
-  if (adminPage.length > 0) {
-    userTable.style="margin-left: 50px";
+  }}
+  if(window.location.pathname === "/Admin/allUser.html")
+    {
+      if (adminPage.length > 0) {
+    userTable.style="margin-left: 50px;font-size: 20px;";
     console.log("working 2")
   } else {
-    userTable.style="margin-left: 300px";
-  }
+    userTable.style="margin-left: 300px;";
+  }}
 }
+
 
 //
 //
@@ -138,6 +152,24 @@ function allUsers() {
       // `;
     });
   });
+    var table = document.getElementById("userTables"); // Update with your table's actual ID
+    
+    if (table) { // Check if the table exists
+        // Loop through each row in the table (skipping the header row)
+        for (let i = 1; i < table.rows.length; i++) {
+            const row = table.rows[i];
+            
+            // Loop through each cell in the current row
+            for (let j = 0; j < row.cells.length; j++) {
+                const cell = row.cells[j];
+                
+                // Check if the cell is empty or contains 'undefined' text
+                if (cell.innerText.trim() === "" || cell.innerText === "undefined") {
+                    cell.innerText = "-";
+                }
+            }
+        }
+      }
 }
 //
 //

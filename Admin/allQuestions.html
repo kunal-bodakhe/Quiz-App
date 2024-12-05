@@ -8,6 +8,12 @@
   </head>
   <body>
     <header id="head">
+      <!-- <img id="menu" src="../assets/menu.png" alt="" height="30px" width="30px" "> -->
+      <div id="menuBox" onclick="onMenu()">
+        <div class="menuLine"></div>
+        <div id="menuHover"></div>
+        <div class="menuLine"></div>
+      </div>
       <img
         id="techpathshala-logo"
         src="../assets/techpathshala.svg"
@@ -15,25 +21,45 @@
         height="24px"
       />
       <div id="profileInfo">
-        <p id="admin-name"></p>
+        <p id="admin-name">Kunal</p>
       </div>
     </header>
-    <section>
-      <table class="borderCollape">
+    <section class="inline">
+      <section id="dashboard" class="">
+        <h1 class="center">Menu</h1>
+        
+        <div class="boxes" id="allUser" onclick="window.location='index.html'">
+          <h2><img src="../assets/home.png" alt="" height="30px" width="30px" /><sup>Home</sup></h2>
+        </div>
+          <div class="boxes" id="allUser" onclick="onAllUsers()">
+            <h2><img src="../assets/users.png" alt="" height="30px" width="30px" /><sup>All Users</sup></h2>
+          </div>
+          <div class="boxes" id="allQuestions" onclick="onAllQuestions()">
+            <h2><img
+              src="../assets/Add question.png"
+              alt=""
+              height="30px"
+              width="30px"
+            /><sup>All Questions</sup></h2>
+          </div>
+        
+      </section>
+      <section id="allMcq">
+        <article>
+          <h3>MCQ Questions List</h3>
+          <hr id="hrTag">
+          <button>Add Questions</button>
+        </article>
+      <table id="allMcqTable" class="borderCollape">
         <tbody id="allQuestionsTable">
           <tr>
-            <th>SrNo.</th>
-            <th>Question</th>
-            <th>Option 1</th>
-            <th>Option 2</th>
-            <th>Option 3</th>
-            <th>Option 4</th>
-            <th>Answer</th>
-            <th>Delete</th>
-            <th>Edit</th>
+            <th class="thColor rightBorder">SrNo.</th>
+            <th class="thColor rightBorder">Questions</th>
+            <th class="thColor rightBorder">Actions</th>
           </tr>
         </tbody>
       </table>
+    </section>
     </section>
     <script src="admin.js"></script>
     <script>

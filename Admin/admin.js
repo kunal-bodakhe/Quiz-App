@@ -37,6 +37,7 @@ function onMenu() {
   let mcqTable = document.getElementById("allMcq");
   let questionTable= document.getElementById("allQuestionsTable")
   let hrTag= document.getElementById("hrTag")
+  let questionsColumn= document.getElementById("questionsColumn")
   let adminPage = document.getElementsByClassName("hide");
   let admin = document.getElementById("admin");
   if(window.location.pathname === "/Admin/index.html"){
@@ -59,13 +60,15 @@ function onMenu() {
     if (adminPage.length > 0) {
       mcqTable.style="margin-left: 50px;";
       questionTable.style="font-size:25px;";
-      hrTag.style="width:1310px;"
+      hrTag.style="width:1310px;";
+      questionsColumn.style="width:81%"
 
       console.log("working 2")
     } else {
       mcqTable.style="margin-left: 260px;";
       questionTable.style="font-size:20px";
       hrTag.style="width:1100px;";
+      questionsColumn.style="width:78%"
     }
   }
 }
@@ -210,7 +213,7 @@ function allQuestions() {
     var td1 = document.createElement("td");
     tr.append(td1);
     td1.innerText = allQuestion[i].question;
-    td1.style="width:auto"
+    // td1.style="width:78%"
     // var td2 = document.createElement("td");
     // tr.append(td2);
     // td2.innerText = allQuestion[i].options[0];

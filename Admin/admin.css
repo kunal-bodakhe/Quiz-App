@@ -82,12 +82,12 @@ transition: all 2s ease;
 #dashboard>div:hover{
   color: #f3bd00;
   position: relative;
-  left: 40px;
+  left: 20px;
 }
 #dashboard{
   position: fixed;
   top: 70px;
-  min-width: 17vw;
+  min-width: 15vw;
   background-color: #f7f7f7;
   min-height: 90vh;
   border-right: 2px solid #c4c4c4;
@@ -149,9 +149,9 @@ transition: all 2s ease;
 #userTable{
   /* font-size: 12px; */
   padding: 25px 45px;
-  margin: 100px 50px 30px 50px;
+  margin: 100px 25px 30px 25px;
   /* background-color: #000000;  */
-  margin-left: 300px;
+  margin-left: 270px;
 }
 #allUsersTable{
   box-sizing: border-box ;
@@ -164,27 +164,27 @@ transition: all 2s ease;
   transition: 0.5s ease-in-out;
 }
 #allUsersTable > tr > td {
-  font-size: 14px;
+  font-size: 16px;
   /* font-family: sans-serif; */
   color: rgb(139, 139, 139);
   text-align: center;
   /* border: 2px solid black; */
-  width: 100px;
-  padding: 10px 55px;
+  width: 250px;
+  padding: 20px 10px;
   border-top: 1px rgb(220, 220, 220) solid;
   /* border-right: 2px black solid; */
   /* border-left: 2px black solid; */
   transition: 0.5s ease-in-out;
 }
 .thColor{
-  font-size: 14px;
+  font-size: 16px;
   line-break: none;
   background-color: rgb(234, 234, 234);
   /* border-right: 2px black solid;
   border-left: 2px black solid;
   border-top: 2px black solid; */
   /* padding: 0px 50px; */
-  width: 15%;
+  width: auto;
   padding: 10px 15px;
   transition: 0.5s ease-in-out;
 } 
@@ -192,10 +192,59 @@ transition: all 2s ease;
 
 /* All Question Page */
 
+
+#allMcq{
+  margin-left: 260px;
+  margin-top: 80px;
+  /* box-shadow: 0 0 1000px rgb(35, 35, 35); */
+  /* align-items: center; */
+  background-color: #ffffff;
+
+  /* width: 1270px; */
+  
+}
+#allMcq>article>h3{
+font-size: 25px;
+margin: 40px 0 10px 50px;
+}
+#allMcq>article>hr{
+  margin: 0 0 0 50px;
+  width: 1100px;
+}
+#allMcq>article>button{
+  position: absolute;
+  left: 80%;
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  padding: 8px 25px;
+  background-color: rgb(31, 199, 31);
+  border-radius: 5px;
+  border-color: rgb(31, 199, 31) ;
+  margin-top: 10px;
+
+}
+#allMcqTable{
+  margin: 60px 0px 0 50px;
+  /* padding: 0 50px; */
+  border: 1px solid rgb(220, 220, 220);
+
+  
+}
+.rightBorder{
+  border-right: 1px rgb(220, 220, 220) solid;
+}
+#allQuestionsTable{
+  font-size: 20px;
+}
 #allQuestionsTable > tr > td {
-  border: 2px solid black;
-  padding: 5px;
-  width: fit-content;
+  min-width: fit-content;
+  color: rgb(139, 139, 139);
+  /* text-align: center; */
+  padding: 20px 10px;
+  border-top: 1px rgb(220, 220, 220) solid;
+  border-right: 1px rgb(220, 220, 220) solid;
+  /* transition: 0.1s ; */
 }
 
 /* All result page */

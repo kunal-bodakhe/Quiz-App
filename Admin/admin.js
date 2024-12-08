@@ -12,7 +12,12 @@ let currentEditIndex = null; // Ensure this is defined at the top of the script
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("EditQuestionButton").addEventListener("click", saveEditedQuestion);
   document.getElementById("closeEditPopup").addEventListener("click", closeEditPopup);
-  allQuestions(); // Load questions on page load
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // document.getElementById("ViewQuestionButton").addEventListener("click", saveEditedQuestion);
+  document.getElementById("closeViewPopup").addEventListener("click", closeViewPopup);
+  // this.location.reload();
 });
 // document
 //   .getElementById("EditQuestionButton")
@@ -281,6 +286,17 @@ function allQuestions() {
         allQuestion[i].answer
       );
     });
+    td7.querySelector(".view-btn").addEventListener("click", function () {
+      openViewPopup(
+        i,
+        allQuestion[i].question,
+        allQuestion[i].options[0],
+        allQuestion[i].options[1],
+        allQuestion[i].options[2],
+        allQuestion[i].options[3],
+        allQuestion[i].answer
+      ); // Pass the index and question text to the popup
+    });
   }
 }
 function openDeletePopup(index, questionText) {
@@ -357,7 +373,27 @@ function saveEditedQuestion() {
     location.reload(); // Refresh the table
   }
 
-  closeEditPopup(); // Close the popup
+  closeEditPopup();
+  location.reload(); // Close the popup
+}
+
+function openViewPopup(index, questionText, op1, op2, op3, op4, ans){
+
+  currentEditIndex = index; // Store the index of the question being edited
+  document.getElementById("originalQuestion").innerText = questionText; // Populate the textarea with the current question
+  document.getElementById("option1").innerText = op1;
+  document.getElementById("option2").innerText = op2;
+  document.getElementById("option3").innerText = op3;
+  document.getElementById("option4").innerText = op4;
+  document.getElementById("answer").innerText = ans;
+
+  document.getElementById("viewPopup").style.display = "block"; // Show the popup
+  document.getElementById("viewQuestionPopup").style.display = "flex";
+}
+
+function closeViewPopup(){
+  document.getElementById("viewPopup").style.display = "none"; // hide the popup
+  document.getElementById("viewQuestionPopup").style.display = "none";
 }
 
 function showPopup() {

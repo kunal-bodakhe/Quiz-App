@@ -1,4 +1,4 @@
-body{
+body {
   margin: 0;
   font-family: sans-serif;
 }
@@ -16,15 +16,15 @@ body{
   border-bottom: 2px solid #c4c4c4;
   min-width: 100vw;
 }
-#menu{
+#menu {
   position: absolute;
   left: 50px;
   top: 20px;
   max-width: fit-content;
 }
-.hide{
-display: none;
-transition: all 2s ease;
+.hide {
+  display: none;
+  transition: all 2s ease;
 }
 #techpathshala-logo {
   flex: 1;
@@ -47,12 +47,12 @@ transition: all 2s ease;
   padding: 0;
 }
 
- /* Admin */
+/* Admin */
 
 .borderCollape {
   border-collapse: collapse;
 }
-.center{
+.center {
   text-align: center;
 }
 .inline {
@@ -62,7 +62,7 @@ transition: all 2s ease;
   max-width: fit-content;
   padding: 0px 20px;
 }
-.box{
+.box {
   font-size: 12px;
   border: 2px solid black;
   color: #818181;
@@ -79,12 +79,12 @@ transition: all 2s ease;
   position: relative;
   left: 35%;
 } */
-#dashboard>div:hover{
+#dashboard > div:hover {
   color: #f3bd00;
   position: relative;
   left: 20px;
 }
-#dashboard{
+#dashboard {
   position: fixed;
   top: 70px;
   min-width: 15vw;
@@ -93,19 +93,19 @@ transition: all 2s ease;
   border-right: 2px solid #c4c4c4;
   font-size: 14px;
 }
-#dashboard>h1{
+#dashboard > h1 {
   padding: 50px 0 100px 0;
   margin: 0;
   font-size: 24px;
 }
-.admin{
+.admin {
   position: relative;
   left: 25%;
   top: 70px;
   min-width: fit-content;
   justify-content: center;
 }
-#menuBox{
+#menuBox {
   position: relative;
   left: 70px;
   top: 7px;
@@ -113,48 +113,47 @@ transition: all 2s ease;
   height: 30px;
   cursor: pointer;
 }
-#menuBox:hover{
-  #menuHover{
-  width: 17px;
-  border: 1px solid black;
-  margin: none;
-  margin-top: 5px;
-  transition: 0.2s ease;
+#menuBox:hover {
+  #menuHover {
+    width: 17px;
+    border: 1px solid black;
+    margin: none;
+    margin-top: 5px;
+    transition: 0.2s ease;
   }
-  
 }
-#menuHover{
+#menuHover {
   width: 10px;
   border: 1px solid black;
   margin: none;
   margin-top: 5px;
 }
-.menuLine{
+.menuLine {
   /* height: 1px;  */
   width: 17px;
   border: 1px solid black;
   margin: none;
   margin-top: 5px;
 }
-.dashboardShow{
+.dashboardShow {
   transition: 0.1s ease-in-out;
   left: 20%;
-  div{
+  div {
     padding: 20px 100px;
     transition: 0.3s ease-in-out;
   }
 }
 
 /* All User Page  */
-#userTable{
+#userTable {
   /* font-size: 12px; */
   padding: 25px 45px;
   margin: 100px 25px 30px 25px;
   /* background-color: #000000;  */
   margin-left: 270px;
 }
-#allUsersTable{
-  box-sizing: border-box ;
+#allUsersTable {
+  box-sizing: border-box;
   /* position: relative;
   left: 25%; */
   border: 1px solid rgb(220, 220, 220);
@@ -176,7 +175,7 @@ transition: all 2s ease;
   /* border-left: 2px black solid; */
   transition: 0.5s ease-in-out;
 }
-.thColor{
+.thColor {
   font-size: 16px;
   line-break: none;
   background-color: rgb(234, 234, 234);
@@ -187,13 +186,11 @@ transition: all 2s ease;
   width: auto;
   padding: 10px 15px;
   /* transition: 0.5s ease-in-out; */
-} 
-  
+}
 
 /* All Question Page */
 
-
-#allMcq{
+#allMcq {
   margin-left: 260px;
   margin-top: 80px;
   /* box-shadow: 0 0 1000px rgb(35, 35, 35); */
@@ -201,17 +198,16 @@ transition: all 2s ease;
   background-color: #ffffff;
 
   /* width: 1270px; */
-  
 }
-#allMcq>article>h3{
-font-size: 25px;
-margin: 40px 0 10px 50px;
+#allMcq > article > h3 {
+  font-size: 25px;
+  margin: 40px 0 10px 50px;
 }
-#allMcq>article>hr{
+#allMcq > article > hr {
   margin: 0 0 0 50px;
   width: 1100px;
 }
-#allMcq>article>button{
+#allMcq > article > button {
   position: absolute;
   left: 80%;
   font-size: 20px;
@@ -220,25 +216,21 @@ margin: 40px 0 10px 50px;
   padding: 8px 25px;
   background-color: rgb(31, 199, 31);
   border-radius: 5px;
-  border-color: rgb(31, 199, 31) ;
+  border-color: rgb(31, 199, 31);
   margin-top: 10px;
-
 }
-#allMcqTable{
+#allMcqTable {
   margin: 60px 0px 0 50px;
   /* padding: 0 50px; */
   border: 1px solid rgb(220, 220, 220);
-
-  
 }
-.rightBorder{
+.rightBorder {
   border-right: 1px rgb(220, 220, 220) solid;
 }
-#allQuestionsTable{
+#allQuestionsTable {
   font-size: 20px;
 }
 #allQuestionsTable > tr > td {
-  
   font-size: 16px;
   color: rgb(139, 139, 139);
   /* text-align: center; */
@@ -248,19 +240,7 @@ margin: 40px 0 10px 50px;
   border-right: 1px rgb(220, 220, 220) solid;
   /* transition: 0.1s ; */
 }
-#addQuestionPopup{
-background: rgba(0, 0, 0, 0.6);
-width: 100%;
-height: 100%;
-position: fixed;
-z-index: 11;
-top: 0px;
-display: flex;
-justify-content: center;
-align-items: center;
-display: none;
-}
-#editQuestionPopup{
+#addQuestionPopup {
   background: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
@@ -271,20 +251,32 @@ display: none;
   justify-content: center;
   align-items: center;
   display: none;
-  }
-  #viewQuestionPopup{
-    background: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 11;
-    top: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    }
-#viewPopup{
+}
+#editQuestionPopup {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 11;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+#viewQuestionPopup {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 11;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+#viewPopup {
   height: auto;
   width: auto;
   background-color: white;
@@ -294,14 +286,13 @@ display: none;
   /* text-align: center; */
   padding: 20px 80px;
 }
-#viewPopup>h4{
+#viewPopup > h4 {
   margin: 10px 0 10px 0;
-  
 }
-#viewPopup>p{
-margin: -28px 0 0 100px;
+#viewPopup > p {
+  margin: -28px 0 0 100px;
 }
-.popupContent{
+.popupContent {
   height: auto;
   width: auto;
   background-color: white;
@@ -311,11 +302,11 @@ margin: -28px 0 0 100px;
   text-align: center;
   padding: 20px 80px;
 }
-.popupContent>form>input{
-  margin: 20px 30px;
+.popupContent > form > input {
+  margin: 20px 20px;
   padding: 10px 20px;
 }
-#submitQuestionButton{
+#submitQuestionButton {
   margin: 20px 30px;
   padding: 10px 20px;
   cursor: pointer;
@@ -325,19 +316,19 @@ margin: -28px 0 0 100px;
   padding: 10px 20px;
   cursor: pointer;
 } */
-#closeButton{
-  position: absolute;
-  top: -3%;
-  left: 97%;
-  cursor: pointer;  
-}
-#closeEditPopup{
+#closeButton {
   position: absolute;
   top: -3%;
   left: 97%;
   cursor: pointer;
 }
-#closeViewPopup{
+#closeEditPopup {
+  position: absolute;
+  top: -3%;
+  left: 97%;
+  cursor: pointer;
+}
+#closeViewPopup {
   position: absolute;
   top: -4%;
   left: 97.5%;
@@ -353,7 +344,11 @@ margin: -28px 0 0 100px;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
-
+.red {
+  margin: 0;
+  padding: 0;
+  color: red;
+}
 
 /* All result page */
 

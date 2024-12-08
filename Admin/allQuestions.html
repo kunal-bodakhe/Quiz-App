@@ -81,19 +81,26 @@
       </section>
       <div id="addQuestionPopup" class="">
         <div class="popupContent">
+          <h2>Add Question</h2>
           <form>
-            Question:<input type="text" id="newQuestion" required /><br />
-            option 1:<input type="text" id="firstOption" required /><br />
-            option 2:<input type="text" id="secondOption" required /><br />
-            option 3:<input type="text" id="thirdOption" required /><br />
-            option 4:<input type="text" id="fourthOption" required /><br />
-            answer:<input type="text" id="correct" required /><br />
+            Question:<span class="red">*</span
+            ><input type="text" id="newQuestion" required /><br />
+            option 1:<span class="red">*</span
+            ><input type="text" id="firstOption" required /><br />
+            option 2:<span class="red">*</span
+            ><input type="text" id="secondOption" required /><br />
+            option 3:<span class="red">*</span
+            ><input type="text" id="thirdOption" required /><br />
+            option 4:<span class="red">*</span
+            ><input type="text" id="fourthOption" required /><br />
+            answer:<span class="red">*</span
+            ><input type="text" id="correct" required /><br />
             <button
               id="submitQuestionButton"
               type="button"
               onclick="addQuestions();"
             >
-              Add Question
+              Submit
             </button>
             <img
               id="closeButton"
@@ -161,37 +168,18 @@
       <div id="editQuestionPopup" class="">
         <div id="editPopup" class="popupContent">
           <form>
-            Question:<input type="text" id="question" value="" required /><br />
-            option 1:<input
-              type="text"
-              id="optionOne"
-              value=""
-              required
-            /><br />
-            option 2:<input
-              type="text"
-              id="optionTwo"
-              value=""
-              required
-            /><br />
-            option 3:<input
-              type="text"
-              id="optionThree"
-              value=""
-              required
-            /><br />
-            option 4:<input
-              type="text"
-              id="optionFour"
-              value=""
-              required
-            /><br />
-            answer:<input
-              type="text"
-              id="correctAnswer"
-              value=""
-              required
-            /><br />
+            Question:<span class="red">*</span
+            ><input type="text" id="question" value="" required /><br />
+            option 1:<span class="red">*</span
+            ><input type="text" id="optionOne" value="" required /><br />
+            option 2:<span class="red">*</span
+            ><input type="text" id="optionTwo" value="" required /><br />
+            option 3:<span class="red">*</span
+            ><input type="text" id="optionThree" value="" required /><br />
+            option 4:<span class="red">*</span
+            ><input type="text" id="optionFour" value="" required /><br />
+            answer:<span class="red">*</span
+            ><input type="text" id="correctAnswer" value="" required /><br />
             <button id="EditQuestionButton" type="button">Edit Question</button>
             <img
               id="closeEditPopup"

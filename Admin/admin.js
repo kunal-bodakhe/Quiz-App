@@ -10,13 +10,19 @@ document
 let currentEditIndex = null; // Ensure this is defined at the top of the script
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("EditQuestionButton").addEventListener("click", saveEditedQuestion);
-  document.getElementById("closeEditPopup").addEventListener("click", closeEditPopup);
+  document
+    .getElementById("EditQuestionButton")
+    .addEventListener("click", saveEditedQuestion);
+  document
+    .getElementById("closeEditPopup")
+    .addEventListener("click", closeEditPopup);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   // document.getElementById("ViewQuestionButton").addEventListener("click", saveEditedQuestion);
-  document.getElementById("closeViewPopup").addEventListener("click", closeViewPopup);
+  document
+    .getElementById("closeViewPopup")
+    .addEventListener("click", closeViewPopup);
   // this.location.reload();
 });
 // document
@@ -338,11 +344,10 @@ function openEditPopup(index, questionText, op1, op2, op3, op4, ans) {
 }
 
 function closeEditPopup() {
-  
   document.getElementById("editPopup").style.display = "none"; // Hide the popup
   document.getElementById("editQuestionPopup").style.display = "none";
   currentEditIndex = null; // Reset the index
-  console.log(currentEditIndex)
+  console.log(currentEditIndex);
 }
 
 function saveEditedQuestion() {
@@ -377,8 +382,7 @@ function saveEditedQuestion() {
   location.reload(); // Close the popup
 }
 
-function openViewPopup(index, questionText, op1, op2, op3, op4, ans){
-
+function openViewPopup(index, questionText, op1, op2, op3, op4, ans) {
   currentEditIndex = index; // Store the index of the question being edited
   document.getElementById("originalQuestion").innerText = questionText; // Populate the textarea with the current question
   document.getElementById("option1").innerText = op1;
@@ -391,7 +395,7 @@ function openViewPopup(index, questionText, op1, op2, op3, op4, ans){
   document.getElementById("viewQuestionPopup").style.display = "flex";
 }
 
-function closeViewPopup(){
+function closeViewPopup() {
   document.getElementById("viewPopup").style.display = "none"; // hide the popup
   document.getElementById("viewQuestionPopup").style.display = "none";
 }
@@ -415,30 +419,36 @@ function hidePopup() {
 
 function addQuestions() {
   // console.log("hello working")
-  var newQuestion = document.getElementById("newQuestion");
-  var firstOption = document.getElementById("firstOption");
-  var secondOption = document.getElementById("secondOption");
-  var thirdOption = document.getElementById("thirdOption");
-  var fourthOption = document.getElementById("fourthOption");
-  var correctAnswer = document.getElementById("correct");
+  var newQuestion = document.getElementById("newQuestion").value;
+  var firstOption = document.getElementById("firstOption").value;
+  var secondOption = document.getElementById("secondOption").value;
+  var thirdOption = document.getElementById("thirdOption").value;
+  var fourthOption = document.getElementById("fourthOption").value;
+  var correctAnswer = document.getElementById("correct").value;
 
-  var optionsArray = [
-    firstOption.value,
-    secondOption.value,
-    thirdOption.value,
-    fourthOption.value,
-  ];
-  var addedQuestion = {
-    question: newQuestion.value,
-    options: optionsArray,
-    answer: correctAnswer.value,
-  };
-  let Questions = JSON.parse(localStorage.getItem("AllQuestions"));
-  Questions.push(addedQuestion);
-  localStorage.setItem("AllQuestions", JSON.stringify(Questions));
-  console.log(Questions);
+  if (
+    firstOption.trim() !== "" &&
+    secondOption.trim() !== "" &&
+    thirdOption.trim() !== "" &&
+    fourthOption.trim() !== "" &&
+    newQuestion.trim() !== "" &&
+    correctAnswer.trim() !== ""
+  ) {
+    var optionsArray = [firstOption, secondOption, thirdOption, fourthOption];
+    var addedQuestion = {
+      question: newQuestion,
+      options: optionsArray,
+      answer: correctAnswer,
+    };
+    let Questions = JSON.parse(localStorage.getItem("AllQuestions"));
+    Questions.push(addedQuestion);
+    localStorage.setItem("AllQuestions", JSON.stringify(Questions));
+    console.log(Questions);
 
-  location.reload();
+    location.reload();
+  } else {
+    alert("every space should be filled");
+  }
 }
 // function deleteQuestion(index) {
 //   // Get the questions from localStorage

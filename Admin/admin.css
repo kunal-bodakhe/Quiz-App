@@ -176,7 +176,7 @@ body {
   transition: 0.5s ease-in-out;
 }
 .thColor {
-  font-size: 16px;
+  /* font-size: 16px; */
   line-break: none;
   background-color: rgb(234, 234, 234);
   /* border-right: 2px black solid;
@@ -186,6 +186,50 @@ body {
   width: auto;
   padding: 10px 15px;
   /* transition: 0.5s ease-in-out; */
+}
+#selectedUserInfo{
+  margin-left: 260px;
+  margin-top: 80px;
+  background-color: #ffffff;
+
+}
+#selectedUserInfo > article>div{
+  display: inline-flex;
+  margin: 70px 0 0 50px;
+}
+#selectedUserInfo > article > div> h3 {
+  font-size: 25px;
+  margin:0px 0px 0px 0px;
+}
+#selectedUserInfo > article > div>span{
+  font-weight: bold;
+  font-size: 30px;
+  margin: -5px 15px 0 15px;
+}
+#selectedUserInfo > article > hr {
+  margin: 10px 0 0 50px;
+  width: 1100px;
+}
+#selectedUserSection{
+  margin: 20px 0 0 50px;
+  border: 1px rgb(220, 220, 220) solid;
+}
+/* #selectedUserTests{
+
+} */
+.questionsColumns{
+  padding: 10px 72px 10px 72px;
+}
+.questionsColumnBig{
+  padding: 10px 96px 10px 95px;
+}
+#selectedUserTests>tr>td{
+  /* padding: 10px 72px 10px 72px; */
+  text-align: center;
+  color: rgb(139, 139, 139);
+  width: auto;
+  padding: 10px 0px;
+  border-top: 1px rgb(220, 220, 220) solid;
 }
 
 /* All Question Page */

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Test Info</title>
+    <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+    <header id="head">
+        <!-- <img id="menu" src="../assets/menu.png" alt="" height="30px" width="30px" "> -->
+        <div id="menuBox" onclick="onMenu()">
+          <div class="menuLine"></div>
+          <div id="menuHover"></div>
+          <div class="menuLine"></div>
+        </div>
+        <img
+          id="techpathshala-logo"
+          src="../assets/techpathshala.svg"
+          width="198px"
+          height="24px"
+        />
+        <div id="profileInfo">
+          <p id="admin-name">Kunal</p>
+        </div>
+      </header>
+      <section class="inline">
+        <section id="dashboard" class="">
+          <h1 class="center">Menu</h1>
+  
+          <div class="boxes" id="allUser" onclick="window.location='index.html'">
+            <h2>
+              <img
+                src="../assets/home.png"
+                alt=""
+                height="30px"
+                width="30px"
+              /><sup>Home</sup>
+            </h2>
+          </div>
+          <div class="boxes" id="allUser" onclick="onAllUsers()">
+            <h2>
+              <img
+                src="../assets/users.png"
+                alt=""
+                height="30px"
+                width="30px"
+              /><sup>All Users</sup>
+            </h2>
+          </div>
+          <div class="boxes" id="allQuestions" onclick="onAllQuestions()">
+            <h2>
+              <img
+                src="../assets/Add question.png"
+                alt=""
+                height="30px"
+                width="30px"
+              /><sup>All Questions</sup>
+            </h2>
+          </div>
+        </section>
+        <section id="selectedUserInfo">
+          <article>
+            <div>
+                <h3 id="selectedUserName">Name</h3><span>|</span><h3 id="selectedUserEmail">Email</h3>
+            </div>
+            <hr id="hrTag" />
+          </article>
+          <section id="selectedUserSection">
+            <table id="selectedUserTable" class="borderCollape">
+              <tbody id="selectedUserTests">
+                <tr id="selectedUserTableRow">
+                  <th class="thColor questionsColumns">Test No.</th>
+                  <th class="thColor questionsColumns">Test Date</th>
+                  <th class="thColor questionsColumns">Scores</th>
+                  <th class="thColor questionsColumns">Correct Answers</th>
+                  <th class="thColor questionsColumns">View Test</th>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+
+
+    <script src="admin.js"></script>
+    <script>selectedUserPage()</script>
+</body>
+</html>

@@ -1,11 +1,13 @@
 let deleteIndex = null;
 
-document
-  .getElementById("confirmDeleteBtn")
-  .addEventListener("click", deleteQuestion);
-document
-  .getElementById("cancelDeleteBtn")
-  .addEventListener("click", closeDeletePopup);
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("confirmDeleteBtn")
+    .addEventListener("click", deleteQuestion);
+  document
+    .getElementById("cancelDeleteBtn")
+    .addEventListener("click", closeDeletePopup);
+});
 
 let currentEditIndex = null; // Ensure this is defined at the top of the script
 
@@ -68,6 +70,7 @@ function onMenu() {
   let dashboard = document.getElementById("dashboard");
   dashboard.classList.toggle("hide");
   let userTable = document.getElementById("userTable");
+  let thElements = document.querySelectorAll(".thColor");
   let mcqTable = document.getElementById("allMcq");
   let questionTable = document.getElementById("allQuestionsTable");
   let hrTag = document.getElementById("hrTag");
@@ -104,6 +107,51 @@ function onMenu() {
       questionTable.style = "font-size:20px";
       hrTag.style = "width:1100px;";
       questionsColumn.style = "width:78%";
+    }
+  }
+  if (window.location.pathname === "/Admin/user.html") {
+    if (adminPage.length > 0) {
+      selectedUserInfo.style = "margin-left: 50px;margin-top: 80px;";
+      hrTag.style = "width:1335px;";
+      
+        // Get all <th> elements with the class 'thColor'
+        // const thElements = document.querySelectorAll(".thColor");
+      
+        thElements.forEach(th => {
+          // Add the specified addClass and remove removeClass
+          th.classList.add("questionsColumnBig");
+          th.classList.remove("questionsColumns");
+        });
+      
+      
+      // Example: Toggle class when a <th> is clicked
+      // document.querySelectorAll(".thColor").forEach(th => {
+      //   th.addEventListener("click", () => {
+      //     toggleClassOnTh("questionsColumns", "questionsColumnBig");
+      //   });
+      // });
+  
+      console.log("working 2");
+    } else {
+      selectedUserInfo.style = "margin-left: 260px;margin-top: 80px;background-color: #ffffff;";
+      hrTag.style = "width:1100px;";
+      
+        // Get all <th> elements with the class 'thColor'
+        
+      
+        thElements.forEach(th => {
+          // Add the specified addClass and remove removeClass
+          th.classList.add("questionsColumns");
+          th.classList.remove("questionsColumnBig");
+        });
+      
+      
+      // Example: Toggle class when a <th> is clicked
+      // document.querySelectorAll(".thColor").forEach(th => {
+      //   th.addEventListener("click", () => {
+      //     toggleClassOnTh("questionsColumnBig", "questionsColumns");
+      //   });
+      // });
     }
   }
 }
@@ -165,47 +213,61 @@ function allUsers() {
     td4.innerText = latestScores[allUser[i].email];
     var td5 = document.createElement("td");
     tr.append(td5);
-    td5.innerHTML = `<a href="" class="view-test-btn">View All Tests</a> `;
-  }
-  const viewTestBtns = document.querySelectorAll(".view-test-btn");
-
-  // Add event listener to each button
-  viewTestBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      // Get the parent row of the clicked button
-      const row = e.target.parentNode.parentNode;
-
-      // Extract the student's information from the row
-      const name = row.cells[1].textContent;
-      const email = row.cells[2].textContent;
-      const score = row.cells[4].textContent;
-      console.log(email);
-
-      function getTestsByEmail(email) {
-        return tests.filter((test) => test.email === email);
-      }
-
-      // Email to check
-      var emailToCheck = email;
-
-      // Get tests for the email
-      const testsForEmail = getTestsByEmail(emailToCheck);
-
-      // Display the tests
-      console.log(`Tests for ${emailToCheck}:`);
-      testsForEmail.forEach((test) => {
-        console.log(`Test: ${test.email}, Score: ${test.score}`);
-      });
-
-      // Display the test information
-      // const testInfoContainer = document.getElementById('test-info');
-      // testInfoContainer.innerHTML = `
-      //   <h2>Test Information for ${name}</h2>
-      //   <p>Email: ${email}</p>
-      //   <p>Score: ${score}</p>
-      // `;
+    td5.innerHTML = `<p class="view-test-btn">View All Tests</p> `;
+    td5.style = "color:blue;cursor:pointer;";
+    td5.querySelector(".view-test-btn").addEventListener("click", function () {
+      localStorage.setItem(
+        "selectedUser",
+        JSON.stringify({
+          selectedUserName: allUser[i].name,
+          selectedUserEmail: allUser[i].email,
+        })
+      );
+      window.location = "user.html";
+      // document.getElementById("selectedUserName").innerText= allUser[i].name;
+      // document.getElementById("selectedUserEmail").innerText= allUser[i].email;
     });
-  });
+  }
+  // const viewTestBtns = document.querySelectorAll(".view-test-btn");
+
+  // // Add event listener to each button
+  // viewTestBtns.forEach((btn) => {
+  //   btn.addEventListener("click", (e) => {
+  //     // Get the parent row of the clicked button
+  //     const row = e.target.parentNode.parentNode;
+
+  //     // Extract the student's information from the row
+  //     const name = row.cells[1].textContent;
+  //     const email = row.cells[2].textContent;
+  //     const score = row.cells[4].textContent;
+  //     console.log(email);
+
+  //     function getTestsByEmail(email) {
+  //       return tests.filter((test) => test.email === email);
+  //     }
+
+  //     // Email to check
+  //     var emailToCheck = email;
+
+  //     // Get tests for the email
+  //     const testsForEmail = getTestsByEmail(emailToCheck);
+
+  //     // Display the tests
+  //     console.log(`Tests for ${emailToCheck}:`);
+  //     testsForEmail.forEach((test) => {
+  //       console.log(`Test: ${test.email}, Score: ${test.score}`);
+  //     });
+
+  //     // Display the test information
+  //     // const testInfoContainer = document.getElementById('test-info');
+  //     // testInfoContainer.innerHTML = `
+  //     //   <h2>Test Information for ${name}</h2>
+  //     //   <p>Email: ${email}</p>
+  //     //   <p>Score: ${score}</p>
+  //     // `;
+  //   });
+  // });
+
   var table = document.getElementById("userTables"); // Update with your table's actual ID
 
   if (table) {
@@ -226,6 +288,63 @@ function allUsers() {
     }
   }
 }
+
+function selectedUserPage() {
+  let user = JSON.parse(localStorage.getItem("selectedUser"));
+
+  document.getElementById("selectedUserName").innerText = user.selectedUserName;
+  document.getElementById("selectedUserEmail").innerText =
+    user.selectedUserEmail;
+
+  const userTests = JSON.parse(localStorage.getItem("userTests"));
+
+  const selectedName = user.selectedUserEmail;
+
+  const filteredTests = userTests.filter((test) => test.email === selectedName);
+
+  console.log(`Tests given by ${selectedName}:`, filteredTests);
+  let table= document.getElementById("selectedUserTests");
+
+  for (let i = 0; i < filteredTests.length; i++) {
+    var tr = document.createElement("tr");
+    table.append(tr);
+    var td = document.createElement("td");
+    tr.append(td);
+    td.innerText = i + 1;
+
+    var td1 = document.createElement("td");
+    tr.append(td1);
+    if (!filteredTests[i].quizDateTimer) {
+      td1.innerText= "-"     
+    }else if (filteredTests[i].quizDateTimer) {
+      td1.innerText=filteredTests[i].quizDateTimer.quizDate;
+    }
+
+    var td2 = document.createElement("td");
+    tr.append(td2);
+    td2.innerText = filteredTests[i].score;
+
+    var td3 = document.createElement("td");
+    tr.append(td3);
+    var correctAnswers="0";
+    for (let j = 0; j < filteredTests[i].questions.length; j++){
+      if (filteredTests[i].questions[j].answer===filteredTests[i].questions[j].choosedAnswer) {
+        correctAnswers++;
+      }
+    }
+    td3.innerText = correctAnswers;
+
+    var td4 = document.createElement("td");
+    tr.append(td4);
+    td4.innerHTML = `<p>View Test</p> `;
+    td4.style = "color:blue;cursor:pointer;";
+
+
+    // var td5 = document.createElement("td");
+    // tr.append(td5);
+  }
+}
+
 //
 //
 //

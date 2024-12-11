@@ -1,3 +1,5 @@
+
+
 let deleteIndex = null;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -336,13 +338,147 @@ function selectedUserPage() {
 
     var td4 = document.createElement("td");
     tr.append(td4);
-    td4.innerHTML = `<p>View Test</p> `;
+    td4.innerHTML = `<p class="viewTest">View Test</p> `;
     td4.style = "color:blue;cursor:pointer;";
-
+    
+    td4.querySelector(".viewTest").addEventListener("click",function(){
+      localStorage.setItem("test",JSON.stringify(filteredTests[i]));
+      localStorage.setItem("testSrNo",JSON.stringify(i+1));
+      window.location="userTest.html"
+    })
 
     // var td5 = document.createElement("td");
     // tr.append(td5);
   }
+}
+
+function viewTestPage(){
+
+  let user = JSON.parse(localStorage.getItem("selectedUser"));
+
+  document.getElementById("selectedUserName").innerText = user.selectedUserName;
+  document.getElementById("selectedUserEmail").innerText =
+    user.selectedUserEmail;
+
+
+  let test=JSON.parse(localStorage.getItem("test"));
+  let testSrNo=JSON.parse(localStorage.getItem("testSrNo"));
+  let testnumber=document.getElementById("testnumber");
+  let scoreOfTest=document.getElementById("scoreOfTest");
+  let DateOfTest=document.getElementById("DateOfTest");
+  let timeTakenMinutes=document.getElementById("timeTakenMinutes");
+  let timeTakenSeconds=document.getElementById("timeTakenSeconds");
+
+
+  testnumber.innerText=testSrNo;
+  scoreOfTest.innerText=test.score;
+  DateOfTest.innerText=test.quizDateTimer.quizDate;
+  timeTakenMinutes.innerText=test.quizDateTimer.quizMinutes;
+  timeTakenSeconds.innerText=test.quizDateTimer.quizSeconds;
+
+    let quizData=test.questions;
+
+    // DOM elements
+    for (let i = 0; i < quizData.length; i++) {
+      // const element = quizData[i];
+      let fullTest=document.getElementById("fullTest")
+      let main=document.createElement("div");
+      let questionContainer= document.createElement("div");
+      let srNo= document.createElement("span");
+      let questionElement=document.createElement("div");
+      let optionsElement= document.createElement("ul");
+      
+      questionContainer.id="questionBox";
+      questionElement.id="question";
+      questionElement.classList.add("question")
+      optionsElement.id="options";
+      optionsElement.classList.add("options")
+
+      main.append(questionContainer);
+      questionContainer.append(srNo);
+      questionContainer.append(questionElement);
+      main.append(optionsElement);
+      fullTest.append(main);
+      
+    // const questionElement = document.getElementById("question");
+    // const optionsElement = document.getElementById("options");
+
+    // Display question
+    srNo.innerText=i+1
+    questionElement.innerText = quizData[i].question;
+
+    // Display options
+    quizData[i].options.forEach((option) => {
+      const li = document.createElement("li");
+      li.textContent = option;
+
+      const img = document.createElement("img");
+      img.classList.add("icon");
+      img.style.visibility = "hidden"; // Hide initially
+      li.appendChild(img);
+
+      li.addEventListener("click", () => handleOptionClick(li, option, img));
+      optionsElement.appendChild(li);
+    });
+
+    // Handle option click
+    function handleOptionClick(selectedElement, selectedOption, imgElement) {
+      // Clear previous classes and icons
+      document.querySelectorAll(".options li").forEach((li) => {
+        li.classList.remove("correct", "incorrect", "correct-answer");
+        const img = li.querySelector("img");
+        if (img) img.style.visibility = "hidden";
+      });
+
+      // Highlight the choosed answer
+      if (selectedOption === quizData.answer) {
+        selectedElement.classList.add("correct");
+        imgElement.src = "../assets/tick.png";
+      } else {
+        selectedElement.classList.add("incorrect");
+        imgElement.src = "../assets/cross.png";
+      }
+      imgElement.style.visibility = "visible";
+
+      // Highlight the correct answer
+      const answerElement = Array.from(optionsElement.children).find(
+        (li) => li.textContent === quizData[i].answer
+      );
+      if (answerElement) {
+        answerElement.classList.add("correct-answer");
+        const correctImg = answerElement.querySelector("img");
+        correctImg.src = "../assets/tick.png";
+        correctImg.style.visibility = "visible";
+      }
+    }
+
+    // Automatically highlight choosedAnswer and answer
+    const choosedAnswerElement = Array.from(optionsElement.children).find(
+      (li) => li.textContent === quizData[i].choosedAnswer
+    );
+    if (choosedAnswerElement) {
+      const img = choosedAnswerElement.querySelector("img");
+      if (quizData[i].choosedAnswer === quizData[i].answer) {
+        choosedAnswerElement.classList.add("correct");
+        img.src = "../assets/tick.png";
+      } else {
+        choosedAnswerElement.classList.add("incorrect");
+        img.src = "../assets/cross.png";
+      }
+      img.style.visibility = "visible";
+    }
+
+    const answerElement = Array.from(optionsElement.children).find(
+      (li) => li.textContent === quizData[i].answer
+    );
+    if (answerElement) {
+      const img = answerElement.querySelector("img");
+      answerElement.classList.add("correct-answer");
+      img.src = "../assets/tick.png";
+      img.style.visibility = "visible";
+    }
+  }
+
 }
 
 //

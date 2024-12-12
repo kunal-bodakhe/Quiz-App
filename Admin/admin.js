@@ -1,4 +1,8 @@
-
+var admins=[{adminName:"Kunal Bodakhe",
+  adminEmail:"kunalbodakhe1230@gmail.com",
+  adminPassword:"password@1230"
+}]
+localStorage.setItem("admin",JSON.stringify(admins));
 
 let deleteIndex = null;
 
@@ -9,6 +13,15 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("cancelDeleteBtn")
     .addEventListener("click", closeDeletePopup);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("confirmLogoutBtn")
+    .addEventListener("click", logout);
+  document
+    .getElementById("cancelLogoutBtn")
+    .addEventListener("click", closeLogoutPopup);
 });
 
 let currentEditIndex = null; // Ensure this is defined at the top of the script
@@ -44,7 +57,44 @@ document.addEventListener("DOMContentLoaded", function () {
 //
 //
 //
-//
+//logout
+let admin=JSON.parse(localStorage.getItem("admin"));
+let adminName=document.getElementById("admin-name");
+adminName.innerText=admin[0].adminName;
+let logoutButton=document.getElementById("logout");
+// function logout(){
+//   // localStorage.removeItem("loggedInAdmin");
+//   openDeletePopup(1,"hello")
+
+//   // window.location="../index.html";
+// }
+function openLogoutPopup() {
+  document.getElementById("logoutPopup").style.display = "block";
+  document.getElementById("overlay").style.display = "block"; // Show overlay
+}
+
+// Function to close the logout popup
+function closeLogoutPopup() {
+  document.getElementById("logoutPopup").style.display = "none";
+  document.getElementById("overlay").style.display = "none"; // Hide overlay
+}
+
+// Function to delete a question
+function logout() {
+  // console.log("done")
+  // if (logoutIndex > null) {
+  //   var allQuestion = JSON.parse(localStorage.getItem("AllQuestions")) || [];
+  //   allQuestion.splice(logoutIndex, 1); // Remove the selected question
+  //   localStorage.setItem("AllQuestions", JSON.stringify(allQuestion)); // Update localStorage
+  //   // allQuestions(); // Refresh the table
+    closeLogoutPopup(); // Close the popup
+  //   location.reload();
+  window.location="../index.html"
+
+  // }
+}
+
+
 function onAllUsers() {
   window.location = "allUser.html";
 }
@@ -576,6 +626,8 @@ function closeDeletePopup() {
 
 // Function to delete a question
 function deleteQuestion() {
+  // console.log("done")
+  // window.location="../index.html"
   if (deleteIndex > null) {
     var allQuestion = JSON.parse(localStorage.getItem("AllQuestions")) || [];
     allQuestion.splice(deleteIndex, 1); // Remove the selected question

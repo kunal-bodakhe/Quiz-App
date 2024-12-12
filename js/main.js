@@ -172,12 +172,7 @@ var Questions = [
 ];
 localStorage.setItem("AllQuestions",JSON.stringify  (Questions))
 // Admin's
-const admins = [
-  {
-    email: "kunalbodakhe1230@gmail.com",
-    password: "kunal@2003",
-  },
-];
+
 
 //SCREEN LOAD CODE
 
@@ -279,7 +274,6 @@ function signin() {
 let user = null;
 
 function on_login() {
-  console.log("test login");
   const email = document.getElementById("email").value;
   const pass = document.getElementById("password").value;
 
@@ -303,12 +297,18 @@ function on_login() {
   }
 
   const userCredentials = JSON.parse(localStorage.getItem("user")) || [];
+  const adminCredentials = JSON.parse(localStorage.getItem("admin")) || [];
   const userExist = userCredentials.filter(
     (userCredentials) => userCredentials.email === email
   );
+  const adminExist = adminCredentials.filter(
+      (adminCredentials) => adminCredentials.adminEmail === email
+    );
+    console.log(adminCredentials)
+  
   if (userExist.length == 1) {
-    if (userExist[0].password == pass) {
-      alert("Login Succesful");
+     if(userExist[0].password == pass) {
+      alert("Login Succesfull");
       let loggedInUser = JSON.stringify(userExist);
       localStorage.setItem("loggedInUser", loggedInUser);
 
@@ -316,10 +316,41 @@ function on_login() {
     } else {
       alert("Please Enter Valid Email or Password");
     }
-  } else {
-    alert("Account doesnt Exist");
+  } else if (adminExist.length == 1) {
+    console.log(adminExist[0].adminPassword)
+      if (adminExist[0].adminPassword == pass) {
+        alert("Admin Login Succesfull");
+        let loggedInAdmin = JSON.stringify(adminExist);
+        localStorage.setItem("loggedInAdmin", loggedInAdmin);
+  
+        window.location = "Admin/index.html";
+
+      }
+    }else{
+      alert("Account doesnt Exist");
+    }
+    // console.log("test login1");
+
+    // let adminExist = adminCredentials.filter(
+    //   (adminCredentials) => adminCredentials.email === email
+    // );
+    // if (adminExist.length == 1) {
+    //   if (adminExist[0].password == pass) {
+    //     alert("Login Succesful");
+    //     let loggedInAdmin = JSON.stringify(adminExist);
+    //     localStorage.setItem("loggedInAdmin", loggedInAdmin);
+  
+    //     window.location = "Admin/index.html";
+
+    //   }
+    // else{
+    //   console.log("test login 2");
+
+      
+    // }
+    // }
   }
-}
+// }
 //
 //
 //

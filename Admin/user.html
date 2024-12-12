@@ -22,8 +22,59 @@
         />
         <div id="profileInfo">
           <p id="admin-name">Kunal</p>
+          <img src="../assets/logout.png" alt="logout" id="logout" width="40px" height="40px" onclick="openLogoutPopup();">
         </div>
       </header>
+      <div
+        id="logoutPopup"
+        style="
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1000;
+          background: white;
+          padding: 20px;
+          border: 2px solid black;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          width: 400px;
+          text-align: center;
+        "
+      >
+        <p style="margin-bottom: 20px; font-size: 16px">
+          Are you sure you want to Logout?
+        </p>
+        <button
+          id="confirmLogoutBtn"
+          style="
+            padding: 10px 20px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+          "
+        >
+          Logout
+        </button>
+        <button
+          id="cancelLogoutBtn"
+          style="
+            padding: 10px 20px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          "
+        >
+          Cancel
+        </button>
+      </div>
+      <div id="overlay"></div>
       <section class="inline">
         <section id="dashboard" class="">
           <h1 class="center">Menu</h1>

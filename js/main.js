@@ -554,10 +554,18 @@ function Submit() {
     email: loggedInUser[0].email,
     quizDateTimer:quizDateTimer,
   };
+  let currentTest= {
+    questions: choosedQuestions,
+    score: score,
+    name: loggedInUser[0].name,
+    email: loggedInUser[0].email,
+    quizDateTimer:quizDateTimer,
+  };
 
   userTests.push(usertest);
   let stringarr = JSON.stringify(userTests);
   localStorage.setItem("userTests", stringarr);
+  localStorage.setItem("currentTest",JSON.stringify(currentTest))
 
   window.location = "scoreboard.html";
 }
@@ -572,6 +580,30 @@ function Submit() {
 //
 function assignRanks() {
   let storedArray = JSON.parse(localStorage.getItem("userTests"));
+  let currentTest = JSON.parse(localStorage.getItem("currentTest"));
+
+
+// Extract scores and sort them
+// const sortedScores = storedArray
+//   .map(obj => obj.score) // Extract scores from objects
+//   .sort((a, b) => a - b); // Sort scores in ascending order
+
+// // Function to find rank of a score
+// function findRank(score, sortedArray) {
+//   return sortedArray.indexOf(score) + 1; // Add 1 since ranks are 1-based
+// }
+
+// // Get the rank for the score in the currentScore object
+// const rank = findRank(currentTest.score, sortedScores);
+
+// console.log(`The rank of the current score ${currentTest.score} is: ${rank}`);
+
+  // const currentUser = currentTest.score;
+
+  // const filteredTests = storedArray.filter((test) => test.score === currentUser);
+
+  // console.log(`Tests given by ${currentUser}:`, filteredTests);
+
   // const scores = storedArray.map((object) => object.score);
   let rankedTests = storedArray.sort((a, b) => b.score - a.score);
 
@@ -602,12 +634,13 @@ function assignRanks() {
     rank6.innerText = rankedTests[5].score;
   }
 
-  let Name1 = document.getElementById("name1");
-  let Name2 = document.getElementById("name2");
-  let Name3 = document.getElementById("name3");
-  let Name4 = document.getElementById("name4");
-  let Name5 = document.getElementById("name5");
-  let Name6 = document.getElementById("name6");
+  let name1 = document.getElementById("name1");
+  let name2 = document.getElementById("name2");
+  let name3 = document.getElementById("name3");
+  let name4 = document.getElementById("name4");
+  let name5 = document.getElementById("name5");
+  let name6 = document.getElementById("name6");
+  let currentUserRank=document.getElementById("currentUserRank");
 
   if (rankedTests.length > 0) {
     name1.innerText = rankedTests[0].name;
@@ -627,5 +660,7 @@ function assignRanks() {
   if (rankedTests.length > 5) {
     name6.innerText = rankedTests[5].name;
   }
-  console.log(rankedTests[0].name);
+  
+  // currentUserRank.innerText=rank
+
 }

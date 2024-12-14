@@ -127,6 +127,8 @@ function onMenu() {
   let questionTable = document.getElementById("allQuestionsTable");
   let hrTag = document.getElementById("hrTag");
   let questionsColumn = document.getElementById("questionsColumn");
+  let quizContainer= document.getElementById("quizContainer");
+  let testDetails= document.getElementById("testDetails");
   let adminPage = document.getElementsByClassName("hide");
   let admin = document.getElementById("admin");
   if (window.location.pathname === "/Admin/index.html") {
@@ -163,7 +165,7 @@ function onMenu() {
   }
   if (window.location.pathname === "/Admin/user.html") {
     if (adminPage.length > 0) {
-      selectedUserInfo.style = "margin-left: 50px;margin-top: 80px;";
+      selectedUserInfo.style = "margin:80px 0 50px 50px";
       hrTag.style = "width:1335px;";
       
         // Get all <th> elements with the class 'thColor'
@@ -198,12 +200,48 @@ function onMenu() {
         });
       
       
+      
+    }
+  }
+  if (window.location.pathname === "/Admin/userTest.html") {
+    if (adminPage.length > 0) {
+      quizContainer.style = "margin-left: 50px;margin-top: 80px;";
+      hrTag.style = "width:1445px;";
+      testDetails.style = "width:1445px;";
+      
+        // Get all <th> elements with the class 'thColor'
+        // const thElements = document.querySelectorAll(".thColor");
+      
+        thElements.forEach(th => {
+          // Add the specified addClass and remove removeClass
+          th.classList.add("questionsColumnBig");
+          th.classList.remove("questionsColumns");
+        });
+      
+      
       // Example: Toggle class when a <th> is clicked
       // document.querySelectorAll(".thColor").forEach(th => {
       //   th.addEventListener("click", () => {
-      //     toggleClassOnTh("questionsColumnBig", "questionsColumns");
+      //     toggleClassOnTh("questionsColumns", "questionsColumnBig");
       //   });
       // });
+  
+      console.log("working 2");
+    } else {
+      quizContainer.style = "margin-left: 260px;margin-top: 80px;background-color: #ffffff;";
+      // hrTag.style = "width:1100px;";
+      
+        // Get all <th> elements with the class 'thColor'
+        
+      
+        thElements.forEach(th => {
+          // Add the specified addClass and remove removeClass
+          th.classList.add("questionsColumns");
+          th.classList.remove("questionsColumnBig");
+        });
+      
+      
+      
     }
   }
 }

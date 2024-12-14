@@ -238,12 +238,13 @@ body {
 
 
 #quizContainer{
-  margin: 80px 0 0 260px;
+  margin: 80px 0 50px 260px;
 }
 
 #quizContainer > article>div{
   display: inline-flex;
   margin: 20px 0 0 0px;
+  /* width: 1000px; */
 }
 #quizContainer > article > div> h3 {
   font-size: 25px;
@@ -261,7 +262,9 @@ body {
 
 #fullTest{
   border: 1px rgb(220, 220, 220) solid;
+  border-radius:0px 0px 10px 10px;
   margin-top: 30px;
+  padding-bottom: 30px;
 }
 #testDetails{
   display: inline-flex;

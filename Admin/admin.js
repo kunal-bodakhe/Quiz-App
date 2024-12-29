@@ -140,6 +140,7 @@ function onMenu() {
     }
   }
   if (window.location.pathname === "/Admin/allUser.html") {
+    
     if (adminPage.length > 0) {
       userTable.style = "margin-left: 50px;font-size: 20px;";
       // userTable.style="padding:25px 55px";
@@ -653,6 +654,7 @@ function openDeletePopup(index, questionText) {
   document.getElementById("deleteMessage").textContent = `${questionText}`;
   document.getElementById("deletePopup").style.display = "block";
   document.getElementById("overlay").style.display = "block"; // Show overlay
+  console.log(deleteIndex)
 }
 
 // Function to close the delete popup
@@ -666,7 +668,7 @@ function closeDeletePopup() {
 function deleteQuestion() {
   // console.log("done")
   // window.location="../index.html"
-  if (deleteIndex > null) {
+  if (deleteIndex >=0) {
     var allQuestion = JSON.parse(localStorage.getItem("AllQuestions")) || [];
     allQuestion.splice(deleteIndex, 1); // Remove the selected question
     localStorage.setItem("AllQuestions", JSON.stringify(allQuestion)); // Update localStorage
@@ -761,23 +763,81 @@ function hidePopup() {
     addQuestionPopup.style = "display:hide;";
   }
 }
+// const quizQuestions = [];
+
+//   document.getElementById('submitQuestionButton').addEventListener('click', function() {
+//     // Get input values
+//     const question = document.getElementById('newQuestion').value;
+//     const option1 = document.getElementById('firstOption').value;
+//     const option2 = document.getElementById('secondOption').value;
+//     const option3 = document.getElementById('thirdOption').value;
+//     const option4 = document.getElementById('fourthOption').value;
+//     const correctAnswerIndex = document.getElementById('correct').value;
+  
+//     // Validate inputs
+//     if (!question || !option1 || !option2 || !option3 || !option4) {
+//       alert('Please fill in all fields.');
+//       return;
+//     }
+  
+//     // Create the quiz question object
+//     const quizQuestion = {
+//       question: question,
+//       options: [option1, option2, option3, option4],
+//       answer: {
+//         index: correctAnswerIndex,
+//         text: [option1, option2, option3, option4][correctAnswerIndex - 1]
+//       }
+//     };
+  
+//     // Add the question to the array
+//     quizQuestions.push(quizQuestion);
+  
+//     // Reset the form
+//     document.getElementById('quizForm').reset();
+  
+//     // Display the updated array
+//     // displayQuestions();
+//     console.log(quizQuestions)
+//   });
+
+  // function displayQuestions() {
+  //   const output = document.getElementById('output');
+  //   output.textContent = JSON.stringify(quizQuestions, null, 2);
+  // }  
 
 function addQuestions() {
-  // console.log("hello working")
+
+  
+
+  console.log("hello working")
   var newQuestion = document.getElementById("newQuestion").value;
   var firstOption = document.getElementById("firstOption").value;
   var secondOption = document.getElementById("secondOption").value;
   var thirdOption = document.getElementById("thirdOption").value;
   var fourthOption = document.getElementById("fourthOption").value;
-  var correctAnswer = document.getElementById("correct").value;
+  var one = document.getElementById("one");
+  var two = document.getElementById("two");
+  var three = document.getElementById("three");
+  var four = document.getElementById("four");
+  var correctAnswer="";
+  if (one.selected) {
+    correctAnswer=firstOption
+  }else if (two.selected) {
+    correctAnswer=secondOption
+  }else if (three.selected) {
+    correctAnswer=thirdOption
+  }else if(four.selected){
+    correctAnswer=fourthOption
+  }
 
   if (
     firstOption.trim() !== "" &&
     secondOption.trim() !== "" &&
     thirdOption.trim() !== "" &&
     fourthOption.trim() !== "" &&
-    newQuestion.trim() !== "" &&
-    correctAnswer.trim() !== ""
+    newQuestion.trim() !== ""
+    // correctAnswer.trim() !== ""
   ) {
     var optionsArray = [firstOption, secondOption, thirdOption, fourthOption];
     var addedQuestion = {
@@ -857,58 +917,58 @@ function addQuestions() {
 //
 //
 
-function allResult() {
-  let storedArray = JSON.parse(localStorage.getItem("userTests"));
-  storedArray.sort((a, b) => b.score - a.score);
-  var allResults = storedArray.sort((a, b) => b.score - a.score);
-  var table = document.getElementById("allResultsTable");
-  for (let i = 0; i < allResults.length; i++) {
-    var tr = document.createElement("tr");
-    table.append(tr);
-    var td = document.createElement("td");
-    tr.append(td);
-    td.innerText = i + 1;
-    var td1 = document.createElement("td");
-    tr.append(td1);
+// function allResult() {
+//   let storedArray = JSON.parse(localStorage.getItem("userTests"));
+//   storedArray.sort((a, b) => b.score - a.score);
+//   var allResults = storedArray.sort((a, b) => b.score - a.score);
+//   var table = document.getElementById("allResultsTable");
+//   for (let i = 0; i < allResults.length; i++) {
+//     var tr = document.createElement("tr");
+//     table.append(tr);
+//     var td = document.createElement("td");
+//     tr.append(td);
+//     td = i + 1;
+//     var td1 = document.createElement("td");
+//     tr.append(td1);
 
-    td1.innerText = allResults[i].name;
-    var td2 = document.createElement("td");
-    tr.append(td2);
+//     td1.innerText = allResults[i].name;
+//     var td2 = document.createElement("td");
+//     tr.append(td2);
 
-    for (let index = 0; index < allResults[i].questions.length; index++) {
-      let tr1 = document.createElement("tr");
-      td2.append(tr1);
-      let coloum = document.createElement("td");
-      tr1.append(coloum);
-      coloum.innerText = allResults[i].questions[index].question;
-    }
+//     for (let index = 0; index < allResults[i].questions.length; index++) {
+//       let tr1 = document.createElement("tr");
+//       td2.append(tr1);
+//       let coloum = document.createElement("td");
+//       tr1.append(coloum);
+//       coloum.innerText = allResults[i].questions[index].question;
+//     }
 
-    var td3 = document.createElement("td");
-    tr.append(td3);
+//     var td3 = document.createElement("td");
+//     tr.append(td3);
 
-    for (let index = 0; index < allResults[i].questions.length; index++) {
-      let tr1 = document.createElement("tr");
-      td3.append(tr1);
-      let coloum = document.createElement("td");
-      tr1.append(coloum);
-      coloum.innerText = allResults[i].questions[index].options[0];
-    }
+//     for (let index = 0; index < allResults[i].questions.length; index++) {
+//       let tr1 = document.createElement("tr");
+//       td3.append(tr1);
+//       let coloum = document.createElement("td");
+//       tr1.append(coloum);
+//       coloum.innerText = allResults[i].questions[index].options[0];
+//     }
 
-    var td4 = document.createElement("td");
-    tr.append(td4);
+//     var td4 = document.createElement("td");
+//     tr.append(td4);
 
-    for (let index = 0; index < allResults[i].questions.length; index++) {
-      let tr1 = document.createElement("tr");
-      td4.append(tr1);
-      let coloum = document.createElement("td");
-      tr1.append(coloum);
-      coloum.innerText = allResults[i].questions[index].options[1];
-    }
-    var td9 = document.createElement("td");
-    tr.append(td9);
-    td9.innerText = allResults[i].score;
-  }
-}
+//     for (let index = 0; index < allResults[i].questions.length; index++) {
+//       let tr1 = document.createElement("tr");
+//       td4.append(tr1);
+//       let coloum = document.createElement("td");
+//       tr1.append(coloum);
+//       coloum.innerText = allResults[i].questions[index].options[1];
+//     }
+//     var td9 = document.createElement("td");
+//     tr.append(td9);
+//     td9.innerText = allResults[i].score;
+//   }
+// }
 
 //
 //

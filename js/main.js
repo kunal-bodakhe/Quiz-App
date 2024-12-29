@@ -377,7 +377,7 @@ function profile() {
 }
 function uploadImage() {
   let userProfile = document.getElementById("userProfile");
-  let uploadImage = document.getElementById("uploadImage");
+  // let uploadImage = document.getElementById("uploadImage");
   let imageInput = document.getElementById("imageInput").files[0].name;
   let imagePath = "assets/" + imageInput;
   let stringedImagePath = JSON.stringify(imagePath);
@@ -492,6 +492,14 @@ function choosedAnswer(optionIndex) {
 }
 
 function next() {
+  const currentQuestionOptions = document.querySelectorAll(`input[name='options']:checked`);
+
+  // Check if no option is selected for the current question
+  if (currentQuestionOptions.length === 0) {
+    alert("Please select an option to proceed.");
+    return;  // Prevent moving to the next question if no option is selected
+  }
+
   if (questionIndex == choosedQuestions.length - 1) {
     
     Submit();

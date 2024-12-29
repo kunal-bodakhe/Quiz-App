@@ -133,23 +133,28 @@
       <div id="addQuestionPopup" class="">
         <div class="popupContent">
           <h2>Add Question</h2>
-          <form>
-            Question:<span class="red">*</span
+          <form id="quizForm">
+            <label for="newQuestion">Question:</label><span class="red">*</span
             ><input type="text" id="newQuestion" required /><br />
-            option 1:<span class="red">*</span
+            <label for="firstOption">option 1:</label><span class="red">*</span
             ><input type="text" id="firstOption" required /><br />
-            option 2:<span class="red">*</span
+            <label for="secondOption">option 2:</label><span class="red">*</span
             ><input type="text" id="secondOption" required /><br />
-            option 3:<span class="red">*</span
+            <label for="thirdOption">option 3:</label><span class="red">*</span
             ><input type="text" id="thirdOption" required /><br />
-            option 4:<span class="red">*</span
+            <label for="fourthOption">option 4:</label><span class="red">*</span
             ><input type="text" id="fourthOption" required /><br />
             answer:<span class="red">*</span
-            ><input type="text" id="correct" required /><br />
+            ><select id="correct">
+              <option id="one">Option 1</option>
+              <option id="two">Option 2</option>
+              <option id="three">Option 3</option>
+              <option id="four">Option 4</option>
+            </select><br />
             <button
               id="submitQuestionButton"
               type="button"
-              onclick="addQuestions();"
+              onclick="addQuestions()"
             >
               Submit
             </button>

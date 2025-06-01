@@ -1,8 +1,4 @@
-var admins=[{adminName:"Kunal Bodakhe",
-  adminEmail:"kunalbodakhe1230@gmail.com",
-  adminPassword:"password@1230"
-}]
-localStorage.setItem("admin",JSON.stringify(admins));
+
 
 let deleteIndex = null;
 

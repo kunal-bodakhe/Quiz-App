@@ -89,6 +89,8 @@ function logout() {
   //   // allQuestions(); // Refresh the table
     closeLogoutPopup(); // Close the popup
   //   location.reload();
+  localStorage.removeItem("loggedInAdmin")
+  sessionStorage.clear();
   window.location="../index.html"
 
   // }
